@@ -1,0 +1,32 @@
+[
+  {
+    "email": "murphy.choy@icloud.com",
+    "name": "Murphy Choy",
+    "role": "Lecturer"
+  },
+  {
+    "email": "goladin@gmail.com",
+    "name": "Goladin",
+    "role": "Lecturer"
+  },
+  {
+    "email": "tranphucdang0709@gmail.com",
+    "name": "Dang Tran",
+    "role": "Student"
+  },
+  {
+    "email": "admin@portal.com",
+    "name": "Demo Account",
+    "role": "Student"
+  },
+  {
+    "email": "student@portal.com",
+    "name": "Learning Student",
+    "role": "Student"
+  },
+  {
+    "email": "mentor@portal.com",
+    "name": "Course Mentor",
+    "role": "Student"
+  }
+]
