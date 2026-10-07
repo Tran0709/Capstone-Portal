@@ -221,10 +221,7 @@ export function initDirectory(
     selectionState = groups.reduce((acc: any, g) => { acc[g.key] = "all"; return acc; }, {});
   }
 
-  function joinStack(project: P, field: string) {
-    const v = project[field];
-    return Array.isArray(v) ? v.join(", ") : String(v || "");
-  }
+  // joinStack was unused; safe to remove (dead code)
 
   function renderProjects(projects: P[]) {
     projectsList.innerHTML = "";
