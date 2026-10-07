@@ -1,0 +1,52 @@
+name: AI maintenance agent
+on:
+  schedule: [{ cron: "0 18 * * 0" }]   # weekly, Sunday 18:00 UTC (Monday 02:00 Singapore)
+  workflow_dispatch:
+    inputs:
+      feedback:
+        description: "Optional: describe a problem (e.g. 'search is not working properly'). Empty = routine weekly maintenance."
+        required: false
+        type: string
+permissions: { contents: write, actions: write }
+concurrency: agent
+jobs:
+  agent:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1' }}
+      SESSION_SECRET: ci-only-not-a-real-secret-0123456789abcdef0123456789abcdef
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: dev, fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Run agent on dev
+        env: { FEEDBACK: "${{ inputs.feedback }}" }
+        run: |
+          if [ -n "$FEEDBACK" ]; then
+            { cat agent/FEEDBACK.md; printf '\n\n<user_feedback>\n%s\n</user_feedback>\n' "$FEEDBACK"; } > "$RUNNER_TEMP/prompt.md"
+          else cp agent/MAINTENANCE.md "$RUNNER_TEMP/prompt.md"; fi
+          node agent/run.mjs "$RUNNER_TEMP/prompt.md"
+      - name: Independent gate (agent cannot skip it)
+        run: |
+          if git diff --name-only | grep -E '^(\.github/|agent/(run\.mjs|MAINTENANCE\.md|FEEDBACK\.md)|\.env|data/users\.json)'; then echo "forbidden path touched"; exit 1; fi
+          npm run typecheck && npm run lint && npm test && npm run build
+      - name: Commit to dev
+        run: |
+          git config user.name "portal-ai-agent"; git config user.email "agent@users.noreply.github.com"
+          git add -A -- . ':!agent/last-report.md'
+          if git diff --cached --quiet; then echo "No changes to commit."; exit 0; fi
+          git commit -m "chore(agent): ${{ inputs.feedback && 'fix from feedback' || 'weekly maintenance' }}"
+          git push origin dev
+      - name: Report
+        if: always()
+        run: |
+          { echo "## AI agent report"; cat agent/last-report.md 2>/dev/null || echo "No report written."; } >> "$GITHUB_STEP_SUMMARY"
+  promote-to-test:
+    needs: agent
+    if: needs.agent.result == 'success'
+    uses: ./.github/workflows/promote.yml
+    with: { to: test }
+    secrets: inherit

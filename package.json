@@ -11,7 +11,13 @@
     "build:vinext": "vinext build",
     "start:vinext": "wrangler dev --config dist/server/wrangler.json",
     "deploy:vinext": "vinext-cloudflare deploy --config dist/server/wrangler.json --experimental-warm-cdn-cache",
-    "deploy:response-store": "wrangler deploy --config wrangler.response-store.jsonc"
+    "deploy:response-store": "wrangler deploy --config wrangler.response-store.jsonc",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "test:smoke": "node scripts/smoke.mjs",
+    "twin:sync": "node scripts/twin-sync.mjs",
+    "twin:dev": "node scripts/twin-sync.mjs && DATABASE_URL=file:data/twin.db PORTAL_ENV=twin AUTH_DEV_ECHO=1 next dev -p 3100",
+    "check": "npm run typecheck && npm run lint && npm test && npm run build"
   },
   "dependencies": {
     "@cloudflare/workers-response-store": "^0.1.0-beta.0",

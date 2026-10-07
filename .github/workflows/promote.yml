@@ -1,0 +1,34 @@
+# Dev -> Test -> Live. Each step re-runs checks and (after deploy) a smoke test on that environment.
+name: Promote
+on:
+  workflow_dispatch:
+    inputs:
+      to: { description: "Promote into", type: choice, options: [test, main], required: true }
+  workflow_call:
+    inputs: { to: { type: string, required: true } }
+permissions: { contents: write }
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    # 'live' environment = required reviewer in repo settings => human approval before production
+    environment: ${{ (inputs.to == 'main' && 'live') || 'testing' }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - name: Pick source branch
+        run: |
+          if [ "${{ inputs.to }}" = "main" ]; then echo "FROM=test" >> $GITHUB_ENV; else echo "FROM=dev" >> $GITHUB_ENV; fi
+      - run: git checkout ${{ env.FROM }} && npm ci && npm run typecheck && npm run lint && npm test
+      - name: Fast-forward target branch
+        run: |
+          git checkout ${{ inputs.to }}
+          git merge --ff-only origin/${{ env.FROM }} || git merge --no-edit origin/${{ env.FROM }}
+          git push origin ${{ inputs.to }}
+      - name: Wait for Vercel deploy + smoke test
+        env:
+          URL: ${{ inputs.to == 'main' && vars.LIVE_URL || vars.TEST_URL }}
+        run: |
+          [ -z "$URL" ] && { echo "No URL variable set; skipping smoke"; exit 0; }
+          sleep 120; node scripts/smoke.mjs "$URL"
