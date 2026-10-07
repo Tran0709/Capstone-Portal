@@ -5,6 +5,12 @@ category filters, and project detail views — behind a **modern dark dashboard 
 
 Built with Next.js (App Router) + TypeScript + Tailwind CSS v4 + shadcn/ui.
 
+## Environments
+
+- **Development (`dev`)**: Run locally using `npm run dev`. Loads environment variables from `.env.local`. Use this for local feature development and debugging.
+- **Test**: Used by automated tests (`npm test`), typically against a temporary or in-memory dataset. Ensures code correctness before deploying.
+- **Live / Production**: The deployed app (e.g., Vercel). Loads real secrets from deployment environment. Used by real users. Only `SESSION_SECRET` is required for password login; additional SMTP settings enable email-code.
+
 ## Security / sign-in
 
 Two server-enforced sign-in methods (choose either):
