@@ -24,3 +24,9 @@ test("no secrets committed", () => {
   });
   for (const f of walk(".")) { const t = readFileSync(f, "utf8"); for (const r of bad) assert.ok(!r.test(t), `secret-like text in ${f}`); }
 });
+test("changelog: valid entries, unique ids, plain text", () => {
+  const c = j("data/changelog.json");
+  assert.ok(Array.isArray(c) && c.length >= 1);
+  assert.equal(new Set(c.map((e) => e.id)).size, c.length);
+  for (const e of c) { assert.ok(e.id && e.date && e.title && e.summary); assert.ok(!/[<>]/.test(e.title + e.summary)); }
+});

@@ -11,3 +11,8 @@ WEEKLY MAINTENANCE TASK
 3. Check data/projects.json integrity (duplicate ids, empty titles/overviews) and fix obvious issues.
 4. Check README/DEPLOY.md are still accurate.
 If nothing needs doing, change nothing and say so in the report.
+
+
+## Notification line (required)
+The first line of your final report must be exactly one line in this form, written for students and lecturers (plain language, no code or file names, max 200 characters):
+USER_NOTE: <what changed for users, or "No visible changes.">

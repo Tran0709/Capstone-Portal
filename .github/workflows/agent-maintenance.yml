@@ -36,8 +36,9 @@ jobs:
       - name: Commit to dev
         run: |
           git config user.name "portal-ai-agent"; git config user.email "agent@users.noreply.github.com"
+          if git diff --quiet && [ -z "$(git ls-files -o --exclude-standard -- . ':!agent/last-report.md')" ]; then echo "No changes to commit."; exit 0; fi
+          node scripts/add-changelog.mjs "${{ inputs.feedback && 'fix' || 'maintenance' }}"
           git add -A -- . ':!agent/last-report.md'
-          if git diff --cached --quiet; then echo "No changes to commit."; exit 0; fi
           git commit -m "chore(agent): ${{ inputs.feedback && 'fix from feedback' || 'weekly maintenance' }}"
           git push origin dev
       - name: Report

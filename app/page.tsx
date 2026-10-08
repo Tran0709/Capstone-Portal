@@ -4,6 +4,7 @@ import { Directory } from "@/components/directory/directory";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/brand/brand-logo";
 import { LogOut, Upload } from "lucide-react";
+import { NotificationBell } from "@/components/notifications/bell";
 
 export default async function Home() {
   const token = (await cookies()).get(SESSION_COOKIE)?.value;
@@ -47,6 +48,7 @@ export default async function Home() {
                 <span className="hidden sm:inline">Upload</span>
               </a>
             )}
+            <NotificationBell userKey={session?.email ?? "anon"} />
             <form action="/api/auth/logout" method="post">
               <Button type="submit" variant="outline" size="sm">
                 <LogOut className="size-4" />
