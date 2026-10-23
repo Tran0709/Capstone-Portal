@@ -27,7 +27,7 @@ export default function LessonsPage() {
       <main className="mx-auto max-w-4xl px-4 py-8 md:px-6">
         <h1 className="text-xl font-semibold">Curtin ISAD 3000 lessons</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          {withVideo} lecture videos across {lessons.length} modules. Modules 89–90 are coming soon.
+          {withVideo} lecture videos and 88 lesson documents across {lessons.length} modules. Modules 89–90 are coming soon.
         </p>
         <div className="mt-6">
           <LessonsBrowser lessons={lessons as Lesson[]} />

@@ -9,7 +9,12 @@
     "id": "CSoV9rmnCQA",
     "title": "Database Optimization Indexes Queries and Scaling"
    }
-  ]
+  ],
+  "summary": "Databases are often the bottleneck in backend applications, as slow queries or unoptimized schemas can delay every user request. Optimization here focuses on reducing query execution time and scaling to handle large datasets.",
+  "doc": {
+   "file": "/lesson-docs/module-01.docx",
+   "name": "Database_Optimization.docx"
+  }
  },
  {
   "id": 2,
@@ -21,7 +26,12 @@
     "id": "s0w1lKk2rNA",
     "title": "Front End Development Building User Centric Interfaces"
    }
-  ]
+  ],
+  "summary": "Front-end development is the art and science of creating interfaces that are not only visually appealing but also accessible, performant, and intuitive. For university learners, mastering front-end development requires balancing technical skills (e.g., framework proficiency)…",
+  "doc": {
+   "file": "/lesson-docs/module-02.docx",
+   "name": "Front-End_Development.docx"
+  }
  },
  {
   "id": 3,
@@ -33,7 +43,12 @@
     "id": "56dA3t6TMmg",
     "title": "Back End Development"
    }
-  ]
+  ],
+  "summary": "Back-end development is responsible for powering the \"invisible\" layers of an application: processing user requests, interacting with databases, enforcing business logic, and securing sensitive data. For university learners, mastering back-end development requires…",
+  "doc": {
+   "file": "/lesson-docs/module-03.docx",
+   "name": "Back-End_Development_Server_Logic_and_API_Design.docx"
+  }
  },
  {
   "id": 4,
@@ -45,7 +60,12 @@
     "id": "za4DOwO636s",
     "title": "Backend Development Frameworks"
    }
-  ]
+  ],
+  "summary": "{ id: 1, name: \"Alice\", email: \"alice@example.com\" },",
+  "doc": {
+   "file": "/lesson-docs/module-04.docx",
+   "name": "Node.js_Ecosystem.docx"
+  }
  },
  {
   "id": 5,
@@ -57,7 +77,12 @@
     "id": "AWAnMyRhA7I",
     "title": "API Design Building Interfaces for Seamless Communication"
    }
-  ]
+  ],
+  "summary": "APIs (Application Programming Interfaces) act as the \"bridge\" between back-end services and front-end/client applications, defining how data is requested, transmitted, and responded to. Well-designed APIs are intuitive, consistent, secure, and scalable—enabling easy…",
+  "doc": {
+   "file": "/lesson-docs/module-05.docx",
+   "name": "API_Design_Building_Interfaces_for_Seamless_Communication.docx"
+  }
  },
  {
   "id": 6,
@@ -69,7 +94,12 @@
     "id": "UhUGHPKbRa8",
     "title": "Data Persistence Managing Databases and ORMs"
    }
-  ]
+  ],
+  "summary": "Data persistence is the process of storing data long-term (beyond application runtime) and retrieving it efficiently. Back-end developers must choose the right database technology, design schemas that align with business needs, and use tools like ORMs (Object-Relational…",
+  "doc": {
+   "file": "/lesson-docs/module-06.docx",
+   "name": "Data_Persistence_Managing_Databases_and_ORMs.docx"
+  }
  },
  {
   "id": 7,
@@ -81,7 +111,12 @@
     "id": "bISZSzJoQjI",
     "title": "Back End Security Protecting Your Systems"
    }
-  ]
+  ],
+  "summary": "Authentication confirms that a user is who they claim to be. Common authentication mechanisms include:",
+  "doc": {
+   "file": "/lesson-docs/module-07.docx",
+   "name": "Security_Protecting_Back-End_Systems.docx"
+  }
  },
  {
   "id": 8,
@@ -93,7 +128,12 @@
     "id": "_0pvGSJ6SaU",
     "title": "Integration and Middleware"
    }
-  ]
+  ],
+  "summary": "Modern applications are rarely monolithic—they consist of multiple components (front-end, back-end services, databases, third-party APIs) that must communicate seamlessly. Integration tools and middleware act as \"glue\" between these components, enabling data flow, handling…",
+  "doc": {
+   "file": "/lesson-docs/module-08.docx",
+   "name": "Integration_and_Middleware.docx"
+  }
  },
  {
   "id": 9,
@@ -105,7 +145,12 @@
     "id": "Z-YMsiYFp2o",
     "title": "Containerization and Deployment"
    }
-  ]
+  ],
+  "summary": "Building a robust development stack is only half the battle—deploying it to production reliably and scaling it to handle user traffic is equally critical. Containerization (with Docker) and orchestration (with Kubernetes) have become industry standards for deploying modern…",
+  "doc": {
+   "file": "/lesson-docs/module-09.docx",
+   "name": "Containerization_and_Deployment.docx"
+  }
  },
  {
   "id": 10,
@@ -117,7 +162,12 @@
     "id": "lbeNF8DyQzY",
     "title": "CICD Pipelines Automating Deployment"
    }
-  ]
+  ],
+  "summary": "2. Build: Pipeline builds the application (e.g., compiles Java code, installs npm dependencies).",
+  "doc": {
+   "file": "/lesson-docs/module-10.docx",
+   "name": "CI_CD_Pipelines.docx"
+  }
  },
  {
   "id": 11,
@@ -129,7 +179,12 @@
     "id": "lHlYs37IMKk",
     "title": "Showcasing Expertise Technical Resume and Interview Mastery"
    }
-  ]
+  ],
+  "summary": "For university learners transitioning from academic study to professional application development roles, showcasing technical expertise effectively is as critical as mastering coding skills. Employers in software engineering prioritize tangible evidence of 能力—whether through…",
+  "doc": {
+   "file": "/lesson-docs/module-11.docx",
+   "name": "Showcasing_Expertise.docx"
+  }
  },
  {
   "id": 12,
@@ -141,14 +196,24 @@
     "id": "WXq-cPX2gZ0",
     "title": "Building Your Technical Portfolio"
    }
-  ]
+  ],
+  "summary": "A technical portfolio is a living extension of your resume—while a resume tells employers what you can do, a portfolio shows them how you do it. For application developers, the portfolio’s centerpiece is your GitHub profile, supplemented by a personal website that…",
+  "doc": {
+   "file": "/lesson-docs/module-12.docx",
+   "name": "Curating_a_Technical_Portfolio.docx"
+  }
  },
  {
   "id": 13,
   "title": "Preparing for Technical Interviews",
   "domain": "career",
   "domainLabel": "Career & Portfolio",
-  "videos": []
+  "videos": [],
+  "summary": "Technical interviews for application development roles assess three core competencies: algorithmic problem-solving (can you write efficient code?), system design (can you build scalable applications?), and behavioral skills (can you work in a team?). Preparation requires…",
+  "doc": {
+   "file": "/lesson-docs/module-13.docx",
+   "name": "Preparing_for_Technical_Interviews.docx"
+  }
  },
  {
   "id": 14,
@@ -160,7 +225,12 @@
     "id": "ROfPy3-nplE",
     "title": "IDEs and Code Editors"
    }
-  ]
+  ],
+  "summary": "The choice of IDE or code editor shapes a developer’s productivity, debugging efficiency, and collaboration capabilities. While IDEs (Integrated Development Environments) offer comprehensive tools for large-scale projects, code editors provide lightweight flexibility for…",
+  "doc": {
+   "file": "/lesson-docs/module-14.docx",
+   "name": "Integrated_Development_Environments_IDEs_and_Code_Editors.docx"
+  }
  },
  {
   "id": 15,
@@ -172,7 +242,12 @@
     "id": "Eets4Z-4fF8",
     "title": "Version Control Systems Enabling Collaborative Development"
    }
-  ]
+  ],
+  "summary": "Version control systems (VCS) track changes to code over time, allowing developers to collaborate, revert to previous versions, and resolve conflicts. Git—the most widely used VCS (adopted by 94% of developers per a 2023 Stack Overflow survey)—is a distributed system, meaning…",
+  "doc": {
+   "file": "/lesson-docs/module-15.docx",
+   "name": "Version_Control_Systems_VCS.docx"
+  }
  },
  {
   "id": 16,
@@ -184,7 +259,12 @@
     "id": "2Gmq-7zF9kM",
     "title": "Debugging and Performance Optimization Tools"
    }
-  ]
+  ],
+  "summary": "Even well-written code contains bugs and performance bottlenecks. Debugging tools help identify and fix bugs, while performance tools pinpoint inefficiencies (e.g., slow database queries, memory leaks). For university learners, mastering these tools is critical for building…",
+  "doc": {
+   "file": "/lesson-docs/module-16.docx",
+   "name": "Debugging_and_Performance_Optimization_Tools.docx"
+  }
  },
  {
   "id": 17,
@@ -196,7 +276,12 @@
     "id": "4finNgKp2dQ",
     "title": "Mastering Programming Languages"
    }
-  ]
+  ],
+  "summary": "A developer’s ability to wield programming languages with precision is not merely a technical skill—it is the foundational literacy that enables translating abstract ideas into functional software. For university-level learners, mastery extends far beyond memorizing syntax;…",
+  "doc": {
+   "file": "/lesson-docs/module-17.docx",
+   "name": "Understanding_your_language_competency.docx"
+  }
  },
  {
   "id": 18,
@@ -208,7 +293,12 @@
     "id": "UNEvRt7UxCg",
     "title": "Data Structures and Algorithms The Logic Engine of Efficient Software"
    }
-  ]
+  ],
+  "summary": "Data structures (the way data is organized) and algorithms (the steps to process data) are the backbone of efficient application development. A 2023 survey by Stack Overflow found that 78% of hiring managers for developer roles test candidates on data structures and…",
+  "doc": {
+   "file": "/lesson-docs/module-18.docx",
+   "name": "Data_Structures_and_Algorithms.docx"
+  }
  },
  {
   "id": 19,
@@ -220,7 +310,12 @@
     "id": "onZPTWFFKas",
     "title": "Computer Science Fundamental"
    }
-  ]
+  ],
+  "summary": "While programming languages and DSA focus on \"how to code,\" computer science fundamentals (CS fundamentals) explain \"how computers work.\" These concepts—operating systems, computer networks, and databases—are essential for building software that interacts with hardware,…",
+  "doc": {
+   "file": "/lesson-docs/module-19.docx",
+   "name": "Computer_Science_Fundamentals.docx"
+  }
  },
  {
   "id": 20,
@@ -232,7 +327,12 @@
     "id": "adonlKObj2o",
     "title": "Strategic Project Evaluation for IT Development Houses"
    }
-  ]
+  ],
+  "summary": "Unlike in-house IT teams (which focus on aligning projects with internal business goals), development houses must juggle dual priorities: client value delivery and organizational sustainability. This duality demands an evaluation framework that assesses not only whether a…",
+  "doc": {
+   "file": "/lesson-docs/module-20.docx",
+   "name": "The_Strategic_Role_of_Project_Evaluation_in_Development_Houses.docx"
+  }
  },
  {
   "id": 21,
@@ -244,7 +344,12 @@
     "id": "ytz4CcUrDM4",
     "title": "Suitability Evaluation Framework"
    }
-  ]
+  ],
+  "summary": "Strategic alignment ensures the project contributes to the development house’s long-term success while meeting the client’s business objectives. This requires a two-way analysis: understanding the client’s needs and matching them to the house’s strategic priorities.",
+  "doc": {
+   "file": "/lesson-docs/module-21.docx",
+   "name": "Evaluating_Project_Suitability_Strategic_and_Operational_Fit.docx"
+  }
  },
  {
   "id": 22,
@@ -256,14 +361,24 @@
     "id": "jU56h7TEwLs",
     "title": "Development Difficulty Assessment"
    }
-  ]
+  ],
+  "summary": "Technical complexity is the most significant driver of project difficulty, as it directly impacts development time, resource needs, and risk of failure. It is assessed by analyzing system architecture, technology stack, and integration requirements.",
+  "doc": {
+   "file": "/lesson-docs/module-22.docx",
+   "name": "Assessing_Development_Difficulty_Technical_and_Managerial_Challenges.docx"
+  }
  },
  {
   "id": 23,
   "title": "Project Management and Team Dynamics: Ensuring Smooth Execution",
   "domain": "evaluation",
   "domainLabel": "Project Evaluation",
-  "videos": []
+  "videos": [],
+  "summary": "Scope creep (uncontrolled changes to requirements) and unrealistic timelines are the top causes of project delays—making scope and schedule assessment essential.",
+  "doc": {
+   "file": "/lesson-docs/module-23.docx",
+   "name": "Project_Management_and_Team_Dynamics_Ensuring_Smooth_Execution.docx"
+  }
  },
  {
   "id": 24,
@@ -275,14 +390,24 @@
     "id": "93fX6_h74DI",
     "title": "Integrated Project Evaluation"
    }
-  ]
+  ],
+  "summary": "Stakeholders—including clients, team members, regulators, and end-users—have diverse needs that must be aligned during evaluation. Poor stakeholder engagement leads to misalignment, scope creep, and project failure.",
+  "doc": {
+   "file": "/lesson-docs/module-24.docx",
+   "name": "Key_Success_Factors_in_Integrated_Evaluation.docx"
+  }
  },
  {
   "id": 25,
   "title": "Case Study 1: HIPAA-Compliant EHR System for a Mid-Sized Hospital",
   "domain": "evaluation",
   "domainLabel": "Project Evaluation",
-  "videos": []
+  "videos": [],
+  "summary": "Client: A mid-sized hospital in Chicago with 200 beds, using paper-based medical records and an outdated scheduling system.",
+  "doc": {
+   "file": "/lesson-docs/module-25.docx",
+   "name": "Case_Study_1_HIPAA-Compliant_EHR_System_for_a_Mid-Sized_Hospital.docx"
+  }
  },
  {
   "id": 26,
@@ -294,7 +419,12 @@
     "id": "c9JsH-WxTt8",
     "title": "AI Chatbot Implementation"
    }
-  ]
+  ],
+  "summary": "Client Goal: Implement a generative AI chatbot to handle 70% of customer support queries (e.g., order tracking, returns) and reduce support costs by 40%.",
+  "doc": {
+   "file": "/lesson-docs/module-26.docx",
+   "name": "Case_Study_2_Generative_AI-Powered_Customer_Support_Chatbot_for_a_E-Commerce_Startup.docx"
+  }
  },
  {
   "id": 27,
@@ -306,7 +436,12 @@
     "id": "GWgaFNU3uGo",
     "title": "Continuous Project Evaluation for IT Development Houses"
    }
-  ]
+  ],
+  "summary": "Inconsistent evaluation processes (e.g., ad-hoc meetings, subjective judgments) lead to inconsistent project outcomes. A standardized framework ensures all projects are assessed using the same criteria, reducing bias and improving decision-making.",
+  "doc": {
+   "file": "/lesson-docs/module-27.docx",
+   "name": "Best_Practices_and_Continuous_Improvement_in_Project_Evaluation.docx"
+  }
  },
  {
   "id": 28,
@@ -318,7 +453,12 @@
     "id": "bu0B11Lcnpw",
     "title": "Future Ready IT Evaluation"
    }
-  ]
+  ],
+  "summary": "Machine learning (ML) and natural language processing (NLP) are transforming project evaluation by automating data analysis and predicting risks with greater accuracy than manual methods.",
+  "doc": {
+   "file": "/lesson-docs/module-28.docx",
+   "name": "Emerging_Trends_in_Project_Evaluation.docx"
+  }
  },
  {
   "id": 29,
@@ -330,7 +470,12 @@
     "id": "jeJkBMD3CpA",
     "title": "The Evolution of Software Development"
    }
-  ]
+  ],
+  "summary": "Prior to the 2000s, the IT industry predominantly relied on the waterfall methodology—a linear, sequential approach to project management that divided development into discrete phases: requirements gathering, system design, implementation, testing, deployment, and…",
+  "doc": {
+   "file": "/lesson-docs/module-29.docx",
+   "name": "The_Evolution_of_Project_Management_in_Tech_Industry.docx"
+  }
  },
  {
   "id": 30,
@@ -342,7 +487,12 @@
     "id": "XI6Gc8lhdSM",
     "title": "The Agile Manifesto"
    }
-  ]
+  ],
+  "summary": "The Agile Manifesto’s four core values serve as the foundation for all agile practices, guiding decision-making in IT development houses. Each value is explored below with practical examples of how it translates to team behavior:",
+  "doc": {
+   "file": "/lesson-docs/module-30.docx",
+   "name": "Core_Values_and_Principles_of_Agile_Methodology.docx"
+  }
  },
  {
   "id": 31,
@@ -354,7 +504,12 @@
     "id": "L7ipZKGaqpc",
     "title": "Thriving in Chaos Why Agile is Essential for IT Development"
    }
-  ]
+  ],
+  "summary": "Adopting agile methodologies provides development houses with four key competitive advantages:",
+  "doc": {
+   "file": "/lesson-docs/module-31.docx",
+   "name": "Addressing_the_Unique_Challenges_of_IT_Development.docx"
+  }
  },
  {
   "id": 32,
@@ -366,7 +521,12 @@
     "id": "YoCifMFqOrU",
     "title": "Scrum Framework Mastery"
    }
-  ]
+  ],
+  "summary": "Scrum is the most widely used agile framework, adopted by 76% of agile organizations (per the 2023 State of Agile Report). It is designed for teams of 3–9 members and uses time-boxed sprints (typically 2–4 weeks) to deliver incremental value. Below is a detailed breakdown of…",
+  "doc": {
+   "file": "/lesson-docs/module-32.docx",
+   "name": "Agile_Methodologies_Scrum_Kanban_and_Beyond.docx"
+  }
  },
  {
   "id": 33,
@@ -382,7 +542,12 @@
     "id": "c4fethvJ7t4",
     "title": "Kanban for IT Development"
    }
-  ]
+  ],
+  "summary": "Kanban is based on four core principles, derived from Toyota’s Lean Manufacturing system:",
+  "doc": {
+   "file": "/lesson-docs/module-33.docx",
+   "name": "Kanban_for_Workflow_Optimization.docx"
+  }
  },
  {
   "id": 34,
@@ -398,7 +563,12 @@
     "id": "NJNzppA25l8",
     "title": "Beyond Scrum and Kanban"
    }
-  ]
+  ],
+  "summary": "Hybrid models combine elements of two or more agile frameworks to leverage their strengths. The most common hybrid models in IT development are Scrum-Kanban hybrids and Scrum-XP hybrids.",
+  "doc": {
+   "file": "/lesson-docs/module-34.docx",
+   "name": "Hybrid_Approaches_and_Extreme_Programming_XP.docx"
+  }
  },
  {
   "id": 35,
@@ -410,14 +580,24 @@
     "id": "xhR7aRu-Zqg",
     "title": "Essential Agile Artifacts Beyond Scrum and Kanban"
    }
-  ]
+  ],
+  "summary": "While Scrum and Kanban define core artifacts (product backlog, sprint backlog, Kanban board), IT development houses use additional artifacts to enhance transparency, collaboration, and documentation. Below are key artifacts and their applications:",
+  "doc": {
+   "file": "/lesson-docs/module-35.docx",
+   "name": "Agile_Artifacts_and_Tools_for_Project_Tracking.docx"
+  }
  },
  {
   "id": 36,
   "title": "Purpose and Role of SRS in the Software Development Lifecycle (SDLC)",
   "domain": "requirements",
   "domainLabel": "Requirements & Technology Investigation",
-  "videos": []
+  "videos": [],
+  "summary": "The role of the SRS varies by SDLC framework, and a development house must tailor the document to its chosen methodology to maximize effectiveness:",
+  "doc": {
+   "file": "/lesson-docs/module-36.docx",
+   "name": "Purpose_and_Role_of_SRS_in_the_Software_Development_Lifecycle_SDLC.docx"
+  }
  },
  {
   "id": 37,
@@ -429,7 +609,12 @@
     "id": "grG62arLYfs",
     "title": "Requirements Engineering"
    }
-  ]
+  ],
+  "summary": "2.1 Requirements Elicitation: Engaging Stakeholders for Comprehensive Data Capture",
+  "doc": {
+   "file": "/lesson-docs/module-37.docx",
+   "name": "The_Requirement_Engineering_Methodology_From_Client_Needs_to_Specification.docx"
+  }
  },
  {
   "id": 38,
@@ -441,7 +626,12 @@
     "id": "IWkfF-aXr5k",
     "title": "Functional Requirements The Heart of SRS"
    }
-  ]
+  ],
+  "summary": "Functional decomposition is the process of breaking down high-level client goals (e.g., “build an inventory management system”) into smaller, manageable modules—each with its own set of FRs. This approach enhances clarity, simplifies development (teams can work on modules in…",
+  "doc": {
+   "file": "/lesson-docs/module-38.docx",
+   "name": "Defining_Functional_Requirements_Translating_Client_Vision_into_System_Behavior.docx"
+  }
  },
  {
   "id": 39,
@@ -453,14 +643,24 @@
     "id": "xbqy9h70S2Q",
     "title": "Non Functional Requirements"
    }
-  ]
+  ],
+  "summary": "Performance NFRs define how fast the system responds to user actions and how efficiently it uses resources (e.g., CPU, memory, bandwidth). Scalability NFRs define how well the system handles growth (e.g., more users, more data, more transactions). Together, they ensure the…",
+  "doc": {
+   "file": "/lesson-docs/module-39.docx",
+   "name": "Addressing_Non-Functional_Requirements_Ensuring_Quality_and_Performance.docx"
+  }
  },
  {
   "id": 40,
   "title": "Security and Compliance Requirements",
   "domain": "requirements",
   "domainLabel": "Requirements & Technology Investigation",
-  "videos": []
+  "videos": [],
+  "summary": "Data security NFRs address how the system protects sensitive information—including inventory data, user credentials, and (if applicable) customer data. They are organized around three core principles: confidentiality (only authorized users access data), integrity (data is…",
+  "doc": {
+   "file": "/lesson-docs/module-40.docx",
+   "name": "Security_and_Compliance_Requirements.docx"
+  }
  },
  {
   "id": 41,
@@ -472,7 +672,12 @@
     "id": "JKJ49y483pw",
     "title": "Non Functional Requirements Usability Reliability and Maintainability"
    }
-  ]
+  ],
+  "summary": "Usability is defined by ISO 9241-11 as “the extent to which a system can be used by specified users to achieve specified goals with effectiveness, efficiency, and satisfaction in a specified context of use.” For the IMS, usability NFRs target both technical and non-technical…",
+  "doc": {
+   "file": "/lesson-docs/module-41.docx",
+   "name": "Usability_Reliability_and_Maintainability_Goals.docx"
+  }
  },
  {
   "id": 42,
@@ -484,7 +689,12 @@
     "id": "ggN9zGIMnY0",
     "title": "Technical Constraints and Interface Specifications"
    }
-  ]
+  ],
+  "summary": "Architectural constraints define the system’s high-level structure (e.g., monolithic vs. microservices), while technological constraints specify the tools, frameworks, and infrastructure to be used. These are often imposed by the client (e.g., “We use AWS for all cloud…",
+  "doc": {
+   "file": "/lesson-docs/module-42.docx",
+   "name": "Technical_Constraints_and_Interface_Specifications_Bridging_Design_and_Implementation.docx"
+  }
  },
  {
   "id": 43,
@@ -496,14 +706,24 @@
     "id": "Qgq8G2Ww6EM",
     "title": "Technology Investigation Report"
    }
-  ]
+  ],
+  "summary": "From a strategic perspective, they serve as a compass for IT firms. In a world where new technologies emerge almost daily, such as the continuous evolution of blockchain, quantum computing concepts starting to gain more practical traction, and the ever - expanding…",
+  "doc": {
+   "file": "/lesson-docs/module-43.docx",
+   "name": "Purpose_and_Significance_of_Technology_Investigation_Reports.docx"
+  }
  },
  {
   "id": 44,
   "title": "Preparatory Phase: Setting the Foundation for Investigation",
   "domain": "requirements",
   "domainLabel": "Requirements & Technology Investigation",
-  "videos": []
+  "videos": [],
+  "summary": "Workshops are an effective way to kick - start this process. They bring together key client representatives, such as business managers, end - users, and sometimes even external stakeholders who have an impact on the project. For example, in a project to develop a new…",
+  "doc": {
+   "file": "/lesson-docs/module-44.docx",
+   "name": "Preparatory_Phase_Setting_the_Foundation_for_Investigation.docx"
+  }
  },
  {
   "id": 45,
@@ -515,7 +735,12 @@
     "id": "TIl09Nxuzho",
     "title": "Technical Landscape Analysis"
    }
-  ]
+  ],
+  "summary": "- Comparing the scalability, security, and cost - efficiency of rival products is an essential part of competitor analysis. In the CRM (Customer Relationship Management) space, Salesforce is a well - known and widely used solution. When benchmarking a custom - built CRM…",
+  "doc": {
+   "file": "/lesson-docs/module-45.docx",
+   "name": "Core_Components_of_the_Technology_Investigation_Report.docx"
+  }
  },
  {
   "id": 46,
@@ -527,14 +752,24 @@
     "id": "ThNxIG7Nveg",
     "title": "IT Risk Management Framework"
    }
-  ]
+  ],
+  "summary": "- Technology obsolescence is a real risk in the fast - paced IT industry. Consider a development house that decides to adopt a new front - end development framework for a web application project. If the vendor of this framework suddenly stops providing support or updates, the…",
+  "doc": {
+   "file": "/lesson-docs/module-46.docx",
+   "name": "Risk_Assessment_and_Mitigation_Strategies.docx"
+  }
  },
  {
   "id": 47,
   "title": "Conclusion and Best Practices for Implementation",
   "domain": "requirements",
   "domainLabel": "Requirements & Technology Investigation",
-  "videos": []
+  "videos": [],
+  "summary": "Our investigation also focused on identifying potential risks and assessing our preparedness to address them. In the realm of cybersecurity, we recognized the importance of being proactive. For instance, in a project involving the development of a financial application, we…",
+  "doc": {
+   "file": "/lesson-docs/module-47.docx",
+   "name": "Conclusion_and_Best_Practices_for_Implementation.docx"
+  }
  },
  {
   "id": 48,
@@ -546,7 +781,12 @@
     "id": "ZQoZPiwQYMs",
     "title": "Software Licensing Fundamentals"
    }
-  ]
+  ],
+  "summary": "In the dynamic realm of IT development, software licensing is a cornerstone concept that often serves as the bridge between the creation of software by development houses and its utilization by end - users. At its most basic level, a software license is a legal agreement that…",
+  "doc": {
+   "file": "/lesson-docs/module-48.docx",
+   "name": "Introduction_to_Software_Licensing_Models_for_IT_Development_Houses.docx"
+  }
  },
  {
   "id": 49,
@@ -558,7 +798,12 @@
     "id": "YjlWuiIK_Pk",
     "title": "Software Licensing Models"
    }
-  ]
+  ],
+  "summary": "For example, consider a mid - sized manufacturing company that wants to implement a new enterprise resource planning (ERP) software. With a traditional perpetual license, the company pays a significant sum to acquire the right to install and use the ERP software across its…",
+  "doc": {
+   "file": "/lesson-docs/module-49.docx",
+   "name": "Key_Software_Licensing_Models_Classification_and_Analysis.docx"
+  }
  },
  {
   "id": 50,
@@ -570,14 +815,24 @@
     "id": "6jyKaKANpzw",
     "title": "Software Licensing Models Strategic Impact on IT Development"
    }
-  ]
+  ],
+  "summary": "Perpetual licenses offer a unique revenue - generation pattern. When an IT development house sells a perpetual license, it experiences a significant influx of revenue at the point of sale. This can be extremely beneficial in the short - term. For example, a software company…",
+  "doc": {
+   "file": "/lesson-docs/module-50.docx",
+   "name": "Impact_of_Licensing_Models_on_IT_Development_House_Operations.docx"
+  }
  },
  {
   "id": 51,
   "title": "Strategic Considerations for Selecting Licensing Models",
   "domain": "licensing",
   "domainLabel": "Software Licensing",
-  "videos": []
+  "videos": [],
+  "summary": "For early - stage products, the primary goal is often to gain widespread adoption and build a user base. In this phase, open - source or freemium licensing models can be highly effective strategies.",
+  "doc": {
+   "file": "/lesson-docs/module-51.docx",
+   "name": "Strategic_Considerations_for_Selecting_Licensing_Models.docx"
+  }
  },
  {
   "id": 52,
@@ -589,7 +844,12 @@
     "id": "wMyS2or7ABY",
     "title": "Software Licensing Success Stories and Lessons"
    }
-  ]
+  ],
+  "summary": "Adobe's shift from perpetual licenses to the Creative Cloud subscription model stands as a remarkable case study in the evolution of software licensing strategies. Historically, Adobe's suite of creative software, including Photoshop, Illustrator, and InDesign, was sold…",
+  "doc": {
+   "file": "/lesson-docs/module-52.docx",
+   "name": "Case_Studies_Successes_and_Challenges_in_Licensing_Strategy.docx"
+  }
  },
  {
   "id": 53,
@@ -601,14 +861,24 @@
     "id": "wgkc0yDLVqw",
     "title": "Future Trends in Software Licensing"
    }
-  ]
+  ],
+  "summary": "With EC2, customers are charged based on the compute hours they use. If a company runs a web application on EC2 instances, it will be billed according to the amount of time those instances are running, the type of instance (which determines the computing power, memory, etc.),…",
+  "doc": {
+   "file": "/lesson-docs/module-53.docx",
+   "name": "Future_Trends_and_Emerging_Licensing_Paradigms.docx"
+  }
  },
  {
   "id": 54,
   "title": "Foundational Ethical Frameworks in Software Development",
   "domain": "ethics",
   "domainLabel": "Ethics in Software",
-  "videos": []
+  "videos": [],
+  "summary": "In the realm of software development, ethics serves as a compass that guides the actions and decisions of development houses. It goes far beyond simply adhering to laws and regulations. Instead, it represents a deep - seated commitment to moral responsibility in every aspect…",
+  "doc": {
+   "file": "/lesson-docs/module-54.docx",
+   "name": "Foundational_Ethical_Frameworks_in_Software_Development.docx"
+  }
  },
  {
   "id": 55,
@@ -620,7 +890,12 @@
     "id": "jffXqt0Ts8g",
     "title": "Ethical Data Practices in Software Development"
    }
-  ]
+  ],
+  "summary": "In the digital age, user data has become the lifeblood of many software applications. For software development houses, the way they collect and handle this data is not only a technical matter but also a profound ethical concern. The relationship between a development house…",
+  "doc": {
+   "file": "/lesson-docs/module-55.docx",
+   "name": "Data_Ethics_Guardianship_of_User_Information.docx"
+  }
  },
  {
   "id": 56,
@@ -632,7 +907,12 @@
     "id": "iB9SWw04G1s",
     "title": "Addressing Bias in Algorithm Design and Development"
    }
-  ]
+  ],
+  "summary": "In the digital age, algorithms have become an integral part of our lives, influencing decisions in various sectors such as hiring, lending, criminal justice, and social media content distribution. However, these algorithms are not neutral; they can carry and even amplify…",
+  "doc": {
+   "file": "/lesson-docs/module-56.docx",
+   "name": "Algorithmic_Ethics_Designing_for_Fairness_and_Transparency.docx"
+  }
  },
  {
   "id": 57,
@@ -644,7 +924,12 @@
     "id": "wrH6dW5GzVE",
     "title": "Code Quality and Technical Integrity"
    }
-  ]
+  ],
+  "summary": "Sloppy code is a major ethical concern. Consider a situation where a developer, in a rush to meet a deadline, writes code that is full of shortcuts and workarounds. This may lead to a software product that appears to work initially but is plagued with bugs and errors over…",
+  "doc": {
+   "file": "/lesson-docs/module-57.docx",
+   "name": "Professional_Ethics_Cultivating_a_Responsible_Development_Culture.docx"
+  }
  },
  {
   "id": 58,
@@ -656,7 +941,12 @@
     "id": "5iOHscldOAk",
     "title": "Designing for Accessibility and Inclusivity"
    }
-  ]
+  ],
+  "summary": "Consider the example of a mobile app designed for fitness tracking. For visually impaired users, simply adding support for screen readers is not enough. The app's design should be intuitive, with clear and concise language in its audio prompts. The navigation should be…",
+  "doc": {
+   "file": "/lesson-docs/module-58.docx",
+   "name": "User-Centric_Ethics_Prioritizing_Human_Well-Being.docx"
+  }
  },
  {
   "id": 59,
@@ -668,7 +958,12 @@
     "id": "ZGLjjd-YVwU",
     "title": "Technology as a Force for Social Good"
    }
-  ]
+  ],
+  "summary": "One of the most significant ways in which development houses can contribute to social good is by prioritizing projects that promote equity. Consider the education sector, where there are vast disparities in access to quality educational resources. A software development house…",
+  "doc": {
+   "file": "/lesson-docs/module-59.docx",
+   "name": "Social_and_Environmental_Ethics_A_Broader_Responsibility.docx"
+  }
  },
  {
   "id": 60,
@@ -680,7 +975,12 @@
     "id": "mi6Tpmvu-fw",
     "title": "Core Principles of Cyber Security for Development Houses"
    }
-  ]
+  ],
+  "summary": "Cyber security in software development transcends technical safeguards; it is a strategic imperative that safeguards a development house’s intellectual property, client data, and brand reputation. The triad of Confidentiality, Integrity, and Availability (CIA) forms the…",
+  "doc": {
+   "file": "/lesson-docs/module-60.docx",
+   "name": "Foundational_Framework_Defining_Cyber_Security_in_the_Context_of_Software_Development.docx"
+  }
  },
  {
   "id": 61,
@@ -692,7 +992,12 @@
     "id": "DX5t9a8nsmc",
     "title": "Security by Design in Software Development"
    }
-  ]
+  ],
+  "summary": "One of the key activities in requirements gathering is threat modeling. Development teams need to conduct comprehensive threat modeling exercises to identify potential attack vectors as early as possible. For example, they can map out user roles within the software system. By…",
+  "doc": {
+   "file": "/lesson-docs/module-61.docx",
+   "name": "Secure_Software_Development_Lifecycle_SDLC_Integrating_Security_from_Requirements_to_Deployment.docx"
+  }
  },
  {
   "id": 62,
@@ -704,7 +1009,12 @@
     "id": "RophG5iYBnM",
     "title": "Advanced Threat Mitigation Techniques"
    }
-  ]
+  ],
+  "summary": "Network security is the first line of defense against external attacks. Firewalls are fundamental components in network security. They act as a barrier between a trusted internal network and an untrusted external network. There are different types of firewalls, such as packet…",
+  "doc": {
+   "file": "/lesson-docs/module-62.docx",
+   "name": "Technical_Practices_Defending_Against_Modern_Threat_Vectors.docx"
+  }
  },
  {
   "id": 63,
@@ -716,7 +1026,12 @@
     "id": "c1zmu986Vn0",
     "title": "Cross Functional Cybersecurity"
    }
-  ]
+  ],
+  "summary": "Cyber security in the context of software development is not a siloed responsibility that can be shouldered solely by the IT team. It demands a holistic approach, involving the active participation and buy - in from multiple stakeholders within a development house, including…",
+  "doc": {
+   "file": "/lesson-docs/module-63.docx",
+   "name": "Organizational_Strategy_Building_a_Security-Centric_Culture.docx"
+  }
  },
  {
   "id": 64,
@@ -728,7 +1043,12 @@
     "id": "DD_5_WlJUcI",
     "title": "Continuous Monitoring and Vulnerability Management"
    }
-  ]
+  ],
+  "summary": "Once a software system is deployed, the journey towards maintaining its security has just begun. Continuous monitoring is the cornerstone of post - deployment security, as it allows development houses to detect anomalies and emerging threats in real - time. In today's dynamic…",
+  "doc": {
+   "file": "/lesson-docs/module-64.docx",
+   "name": "Post-Deployment_Monitoring_Maintenance_and_Incident_Response.docx"
+  }
  },
  {
   "id": 65,
@@ -740,7 +1060,12 @@
     "id": "TU27rTA26aw",
     "title": "The Role of Formal Communication in Software Projects"
    }
-  ]
+  ],
+  "summary": "In the dynamic and complex landscape of software development within an IT development house, formal communication is not just a luxury but an absolute necessity. It functions as the lifeblood that courses through every phase of a software project, ensuring that all components…",
+  "doc": {
+   "file": "/lesson-docs/module-65.docx",
+   "name": "Introduction_to_Formal_Communication_in_IT_Development_Houses.docx"
+  }
  },
  {
   "id": 66,
@@ -752,14 +1077,24 @@
     "id": "V3INDwAsBj0",
     "title": "Communication Channels in IT Development"
    }
-  ]
+  ],
+  "summary": "In the intricate ecosystem of an IT development house, internal communication channels form the backbone of efficient team coordination and seamless knowledge sharing. These channels are the arteries through which information flows, ensuring that every team member is well -…",
+  "doc": {
+   "file": "/lesson-docs/module-66.docx",
+   "name": "Structuring_Formal_Communication_Frameworks.docx"
+  }
  },
  {
   "id": 67,
   "title": "Formal Documentation as a Pillar of Communication",
   "domain": "communication",
   "domainLabel": "Formal Communication",
-  "videos": []
+  "videos": [],
+  "summary": "The Software Requirements Specification (SRS) stands as the bedrock of any software development project within an IT development house. It is not just a document; it is a comprehensive agreement that aligns the vision of the client with the technical implementation plan of…",
+  "doc": {
+   "file": "/lesson-docs/module-67.docx",
+   "name": "Formal_Documentation_as_a_Pillar_of_Communication.docx"
+  }
  },
  {
   "id": 68,
@@ -771,21 +1106,36 @@
     "id": "7_X_XYWMRNg",
     "title": "Iterative Development and Cross Team Collaboration"
    }
-  ]
+  ],
+  "summary": "In the complex ecosystem of software development, collaboration between different teams with diverse roles is the key to success. Developers, product managers, UX designers, and QA engineers each bring a unique perspective and set of skills to the table, but their effective…",
+  "doc": {
+   "file": "/lesson-docs/module-68.docx",
+   "name": "Formal_Communication_in_Cross_-_Functional_Collaboration.docx"
+  }
  },
  {
   "id": 69,
   "title": "Tools and Technologies for Formal Communication",
   "domain": "communication",
   "domainLabel": "Formal Communication",
-  "videos": []
+  "videos": [],
+  "summary": "Jira, developed by Atlassian, is a powerful tool that is particularly well - suited for large - scale, complex projects, especially those following the agile development methodology. It offers a comprehensive set of features for issue tracking, task management, and project…",
+  "doc": {
+   "file": "/lesson-docs/module-69.docx",
+   "name": "Tools_and_Technologies_for_Formal_Communication.docx"
+  }
  },
  {
   "id": 70,
   "title": "Case Studies: Best Practices in Formal Communication",
   "domain": "communication",
   "domainLabel": "Formal Communication",
-  "videos": []
+  "videos": [],
+  "summary": "In the dynamic landscape of software development, scope creep can be a significant challenge that often leads to project overruns, increased costs, and delays. However, a mid - sized development house, let's call them \"InnovateTech\", successfully managed to mitigate scope…",
+  "doc": {
+   "file": "/lesson-docs/module-70.docx",
+   "name": "Case_Studies_Best_Practices_in_Formal_Communication.docx"
+  }
  },
  {
   "id": 71,
@@ -797,14 +1147,24 @@
     "id": "VGefFMsKEdg",
     "title": "Commercialization in Software Development"
    }
-  ]
+  ],
+  "summary": "In the highly competitive and dynamic realm of software engineering, commercialization is far more than just the act of releasing a product into the market. It is a complex, multi - faceted process that seamlessly blends technical innovation with the creation of market value.…",
+  "doc": {
+   "file": "/lesson-docs/module-71.docx",
+   "name": "Introduction_to_Commercialization_in_Software_Development.docx"
+  }
  },
  {
   "id": 72,
   "title": "Market Positioning and Demand Analysis for Commercial Software",
   "domain": "commercial",
   "domainLabel": "Commercialization",
-  "videos": []
+  "videos": [],
+  "summary": "In the realm of commercial software development, market research serves as the cornerstone upon which successful commercialization strategies are built. It is a systematic process of gathering, analyzing, and interpreting information about the market, competitors, and…",
+  "doc": {
+   "file": "/lesson-docs/module-72.docx",
+   "name": "Market_Positioning_and_Demand_Analysis_for_Commercial_Software.docx"
+  }
  },
  {
   "id": 73,
@@ -816,14 +1176,24 @@
     "id": "sJB8XvleOT8",
     "title": "Aligning Technical Features with Commercial Goals"
    }
-  ]
+  ],
+  "summary": "In software development, it is not uncommon for technical prowess to overshadow market - driven considerations. While a software product may be technically brilliant, with advanced algorithms, high - performance code, and state - of - the - art architecture, it may fail in…",
+  "doc": {
+   "file": "/lesson-docs/module-73.docx",
+   "name": "Product_Design_and_Commercial_Viability_Assessment.docx"
+  }
  },
  {
   "id": 74,
   "title": "Integrating Commercialization into the Development Lifecycle",
   "domain": "commercial",
   "domainLabel": "Commercialization",
-  "videos": []
+  "videos": [],
+  "summary": "Commercial considerations should be an integral part of every stage of the software development lifecycle (SDLC), with the initial phases of requirements gathering and design being no exception. During requirements gathering, it is essential for development teams to document…",
+  "doc": {
+   "file": "/lesson-docs/module-74.docx",
+   "name": "Integrating_Commercialization_into_the_Development_Lifecycle.docx"
+  }
  },
  {
   "id": 75,
@@ -835,7 +1205,12 @@
     "id": "Z-X7Mr-79pk",
     "title": "Pricing Strategies for Competitive Positioning"
    }
-  ]
+  ],
+  "summary": "One of the common pricing strategies is skimming. This approach involves setting a high initial price for a software product when it is first introduced to the market. The target audience for skimming is early adopters, who are typically technology enthusiasts, innovators, or…",
+  "doc": {
+   "file": "/lesson-docs/module-75.docx",
+   "name": "Market_Entry_Strategies_for_Commercial_Software_Products.docx"
+  }
  },
  {
   "id": 76,
@@ -847,7 +1222,12 @@
     "id": "wTSQVIHawe0",
     "title": "Common Commercialization Challenges for IT Development Houses"
    }
-  ]
+  ],
+  "summary": "Commercializing software is a complex and challenging endeavor for IT development houses, fraught with a multitude of obstacles that can impede the successful launch and long - term viability of a software product. These challenges can be broadly categorized into technical,…",
+  "doc": {
+   "file": "/lesson-docs/module-76.docx",
+   "name": "Challenges_and_Risk_Management_in_Software_Commercialization.docx"
+  }
  },
  {
   "id": 77,
@@ -859,7 +1239,12 @@
     "id": "TIJnPiMWjnk",
     "title": "Software Architecture Specification The Foundation of Development Success"
    }
-  ]
+  ],
+  "summary": "In the fast - paced and complex realm of an IT development house, a software architecture specification (SAS) is far more than just a technical document; it is the linchpin that holds together the entire software development process. Consider a large - scale e - commerce…",
+  "doc": {
+   "file": "/lesson-docs/module-77.docx",
+   "name": "Introduction_to_Software_Architecture_Specification_in_IT_Development_Houses.docx"
+  }
  },
  {
   "id": 78,
@@ -871,7 +1256,12 @@
     "id": "rnMqRbK7Tb8",
     "title": "Stakeholder Driven Requirements Elicitation"
    }
-  ]
+  ],
+  "summary": "Before embarking on the creation of a software architecture specification (SAS), IT development houses must engage in a comprehensive requirements analysis process. This process is the cornerstone upon which the entire software development project is built, as it uncovers the…",
+  "doc": {
+   "file": "/lesson-docs/module-78.docx",
+   "name": "Preparatory_Steps_Requirements_Analysis_and_Contextualization.docx"
+  }
  },
  {
   "id": 79,
@@ -887,7 +1277,12 @@
     "id": "rimDZgrAz5w",
     "title": "Microservices and Legacy Modernization"
    }
-  ]
+  ],
+  "summary": "Microservices have gained significant popularity in recent years, especially for large - scale, distributed systems. In a microservices architecture, a software system is broken down into a collection of small, independent services. Each service has its own process space, can…",
+  "doc": {
+   "file": "/lesson-docs/module-79.docx",
+   "name": "Core_Components_of_a_Development_House-Grade_SAS.docx"
+  }
  },
  {
   "id": 80,
@@ -899,21 +1294,36 @@
     "id": "_q3havrFXZM",
     "title": "Non Functional Requirements"
    }
-  ]
+  ],
+  "summary": "Non - functional requirements (NFRs) play a pivotal role in the success of a software system, ensuring that it not only meets the functional needs but also operates efficiently, securely, and can adapt to future growth. In the context of a software architecture specification…",
+  "doc": {
+   "file": "/lesson-docs/module-80.docx",
+   "name": "Documenting_Non_-_Functional_Requirements_and_Quality_Attributes.docx"
+  }
  },
  {
   "id": 81,
   "title": "Collaboration and Review: Ensuring SAS Validity and Alignment",
   "domain": "sas",
   "domainLabel": "Software Architecture Specification",
-  "videos": []
+  "videos": [],
+  "summary": "In the complex ecosystem of software development within an IT development house, drafting a software architecture specification (SAS) is a collaborative endeavor that involves multiple stakeholders. This section delves into the iterative development process and the…",
+  "doc": {
+   "file": "/lesson-docs/module-81.docx",
+   "name": "Collaboration_and_Review_Ensuring_SAS_Validity_and_Alignment.docx"
+  }
  },
  {
   "id": 82,
   "title": "Case Studies: SAS Best Practices from Leading Development Houses",
   "domain": "sas",
   "domainLabel": "Software Architecture Specification",
-  "videos": []
+  "videos": [],
+  "summary": "A mid - sized development house was tasked with creating a software architecture for a client's e - commerce platform. The client, a growing online retailer, had ambitious plans for expansion and required a system that could scale effortlessly to handle increased traffic…",
+  "doc": {
+   "file": "/lesson-docs/module-82.docx",
+   "name": "Case_Studies_SAS_Best_Practices_from_Leading_Development_Houses.docx"
+  }
  },
  {
   "id": 83,
@@ -925,7 +1335,12 @@
     "id": "jLmdUZL-ghY",
     "title": "Effective IT Handover Documentation"
    }
-  ]
+  ],
+  "summary": "In the complex and dynamic realm of IT development, a handover document stands as an essential and multifaceted component within the project lifecycle. When an IT development house completes the development phase of a project, the handover document becomes the bridge that…",
+  "doc": {
+   "file": "/lesson-docs/module-83.docx",
+   "name": "Introduction_to_Handover_Documents_in_IT_Development.docx"
+  }
  },
  {
   "id": 84,
@@ -937,7 +1352,12 @@
     "id": "djGGKft72Ug",
     "title": "Stakeholder Collaboration in IT Handover Documents"
    }
-  ]
+  ],
+  "summary": "In the context of an IT development project, the business objectives are the driving force behind the entire initiative. For example, if the project is the development of a customer relationship management (CRM) system for a large - scale financial services firm, the business…",
+  "doc": {
+   "file": "/lesson-docs/module-84.docx",
+   "name": "Core_Elements_of_a_Comprehensive_Handover_Document.docx"
+  }
  },
  {
   "id": 85,
@@ -949,7 +1369,12 @@
     "id": "OL4L_IPeTis",
     "title": "Project Handover Documentation"
    }
-  ]
+  ],
+  "summary": "Adopting a modular structure is a fundamental aspect of creating an effective handover document. By organizing the content into distinct functional domains, the document becomes more digestible and easier to navigate for the receiving team. This approach mirrors the way…",
+  "doc": {
+   "file": "/lesson-docs/module-85.docx",
+   "name": "Structuring_the_Handover_Document_Logical_Flow_and_Formatting.docx"
+  }
  },
  {
   "id": 86,
@@ -961,7 +1386,12 @@
     "id": "hbVuniR7IHU",
     "title": "Technical Accuracy in IT Handover Documents"
    }
-  ]
+  ],
+  "summary": "Developers play a central role as they are the ones who have been deeply involved in the coding and technical implementation of the project. They are responsible for drafting the initial version of the technical sections of the handover document. For example, in a mobile…",
+  "doc": {
+   "file": "/lesson-docs/module-86.docx",
+   "name": "Best_Practices_for_IT_Development_Houses_in_Drafting_Handover_Documents.docx"
+  }
  },
  {
   "id": 87,
@@ -973,7 +1403,12 @@
     "id": "MGK7q-GMZvc",
     "title": "Technical Accuracy in IT Handover Documents"
    }
-  ]
+  ],
+  "summary": "Peer reviews are an essential component of this process. In a peer review, colleagues within the development team, who have expertise in the relevant technical areas, review the handover document. For example, when dealing with a handover document for a mobile application…",
+  "doc": {
+   "file": "/lesson-docs/module-87.docx",
+   "name": "Quality_Assurance_and_Version_Control_for_Handover_Documents.docx"
+  }
  },
  {
   "id": 88,
@@ -985,7 +1420,12 @@
     "id": "-Ej5ZGjIKQg",
     "title": "Enterprise Resource Planning ERP System Handover"
    }
-  ]
+  ],
+  "summary": "In this case, a well - established IT development house was tasked with delivering an Enterprise Resource Planning (ERP) system to a large - scale manufacturing client. The manufacturing client had a complex production process, involving multiple production lines, a vast…",
+  "doc": {
+   "file": "/lesson-docs/module-88.docx",
+   "name": "Case_Study_Practical_Application_of_Handover_Document_Drafting.docx"
+  }
  },
  {
   "id": 89,

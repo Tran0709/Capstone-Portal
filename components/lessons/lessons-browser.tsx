@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { PlayCircle, Search, Video } from "lucide-react";
+import { Download, FileText, PlayCircle, Search, Video } from "lucide-react";
 
 export type LessonVideo = { id: string; title: string };
 export type Lesson = {
@@ -10,6 +10,8 @@ export type Lesson = {
   domain: string;
   domainLabel: string;
   videos: LessonVideo[];
+  summary?: string;
+  doc?: { file: string; name: string };
 };
 
 export function LessonsBrowser({ lessons }: { lessons: Lesson[] }) {
@@ -83,7 +85,7 @@ export function LessonsBrowser({ lessons }: { lessons: Lesson[] }) {
                   </div>
                   <h2 className="mt-0.5 font-medium">{l.title}</h2>
                 </div>
-                {l.videos.length > 0 ? (
+                {l.videos.length > 0 || l.doc ? (
                   <button
                     type="button"
                     onClick={() => setOpen(isOpen ? null : l.id)}
@@ -91,15 +93,18 @@ export function LessonsBrowser({ lessons }: { lessons: Lesson[] }) {
                     aria-expanded={isOpen}
                   >
                     <PlayCircle className="size-4" />
-                    {isOpen ? "Hide video" : "Watch"}
+                    {isOpen ? "Hide" : l.videos.length > 0 ? "Watch" : "Open"}
                   </button>
                 ) : (
                   <span className="inline-flex shrink-0 items-center gap-1.5 text-xs text-muted-foreground">
-                    <Video className="size-4" /> Video coming soon
+                    <Video className="size-4" /> Coming soon
                   </span>
                 )}
               </div>
 
+              {isOpen && l.summary && (
+                <p className="mt-4 text-sm text-muted-foreground">{l.summary}</p>
+              )}
               {isOpen &&
                 l.videos.map((v) => (
                   <div key={v.id} className="mt-4">
@@ -124,6 +129,22 @@ export function LessonsBrowser({ lessons }: { lessons: Lesson[] }) {
                     </a>
                   </div>
                 ))}
+              {isOpen && l.doc && (
+                <div className="mt-4 flex items-center gap-3 rounded-lg border bg-surface-2 p-3">
+                  <FileText className="size-5 shrink-0 text-muted-foreground" />
+                  <div className="min-w-0 flex-1">
+                    <div className="truncate text-sm font-medium">{l.doc.name}</div>
+                    <div className="text-xs text-muted-foreground">Lesson document · Word (.docx)</div>
+                  </div>
+                  <a
+                    href={l.doc.file}
+                    download={l.doc.name}
+                    className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm hover:bg-surface"
+                  >
+                    <Download className="size-4" /> Download
+                  </a>
+                </div>
+              )}
             </li>
           );
         })}
