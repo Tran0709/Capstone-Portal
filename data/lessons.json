@@ -1,0 +1,1004 @@
+[
+ {
+  "id": 1,
+  "title": "Database Optimization",
+  "domain": "fullstack",
+  "domainLabel": "Full-Stack Foundations",
+  "videos": [
+   {
+    "id": "CSoV9rmnCQA",
+    "title": "Database Optimization Indexes Queries and Scaling"
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "title": "Front-End Development",
+  "domain": "fullstack",
+  "domainLabel": "Full-Stack Foundations",
+  "videos": [
+   {
+    "id": "s0w1lKk2rNA",
+    "title": "Front End Development Building User Centric Interfaces"
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "title": "Back-End Development: Server Logic and API Design",
+  "domain": "fullstack",
+  "domainLabel": "Full-Stack Foundations",
+  "videos": [
+   {
+    "id": "56dA3t6TMmg",
+    "title": "Back End Development"
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "title": "Node.js Ecosystem",
+  "domain": "fullstack",
+  "domainLabel": "Full-Stack Foundations",
+  "videos": [
+   {
+    "id": "za4DOwO636s",
+    "title": "Backend Development Frameworks"
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "title": "API Design: Building Interfaces for Seamless Communication",
+  "domain": "fullstack",
+  "domainLabel": "Full-Stack Foundations",
+  "videos": [
+   {
+    "id": "AWAnMyRhA7I",
+    "title": "API Design Building Interfaces for Seamless Communication"
+   }
+  ]
+ },
+ {
+  "id": 6,
+  "title": "Data Persistence: Managing Databases and ORMs",
+  "domain": "fullstack",
+  "domainLabel": "Full-Stack Foundations",
+  "videos": [
+   {
+    "id": "UhUGHPKbRa8",
+    "title": "Data Persistence Managing Databases and ORMs"
+   }
+  ]
+ },
+ {
+  "id": 7,
+  "title": "Security: Protecting Back-End Systems",
+  "domain": "fullstack",
+  "domainLabel": "Full-Stack Foundations",
+  "videos": [
+   {
+    "id": "bISZSzJoQjI",
+    "title": "Back End Security Protecting Your Systems"
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "title": "Integration and Middleware",
+  "domain": "devops",
+  "domainLabel": "DevOps & Delivery",
+  "videos": [
+   {
+    "id": "_0pvGSJ6SaU",
+    "title": "Integration and Middleware"
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "title": "Containerization and Deployment",
+  "domain": "devops",
+  "domainLabel": "DevOps & Delivery",
+  "videos": [
+   {
+    "id": "Z-YMsiYFp2o",
+    "title": "Containerization and Deployment"
+   }
+  ]
+ },
+ {
+  "id": 10,
+  "title": "CI/CD Pipelines",
+  "domain": "devops",
+  "domainLabel": "DevOps & Delivery",
+  "videos": [
+   {
+    "id": "lbeNF8DyQzY",
+    "title": "CICD Pipelines Automating Deployment"
+   }
+  ]
+ },
+ {
+  "id": 11,
+  "title": "Showcasing Expertise",
+  "domain": "career",
+  "domainLabel": "Career & Portfolio",
+  "videos": [
+   {
+    "id": "lHlYs37IMKk",
+    "title": "Showcasing Expertise Technical Resume and Interview Mastery"
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "title": "Curating a Technical Portfolio",
+  "domain": "career",
+  "domainLabel": "Career & Portfolio",
+  "videos": [
+   {
+    "id": "WXq-cPX2gZ0",
+    "title": "Building Your Technical Portfolio"
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "title": "Preparing for Technical Interviews",
+  "domain": "career",
+  "domainLabel": "Career & Portfolio",
+  "videos": []
+ },
+ {
+  "id": 14,
+  "title": "Integrated Development Environments (IDEs) and Code Editors",
+  "domain": "tooling",
+  "domainLabel": "Dev Tooling & CS Fundamentals",
+  "videos": [
+   {
+    "id": "ROfPy3-nplE",
+    "title": "IDEs and Code Editors"
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "title": "Version Control Systems (VCS)",
+  "domain": "tooling",
+  "domainLabel": "Dev Tooling & CS Fundamentals",
+  "videos": [
+   {
+    "id": "Eets4Z-4fF8",
+    "title": "Version Control Systems Enabling Collaborative Development"
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "title": "Debugging and Performance Optimization Tools",
+  "domain": "tooling",
+  "domainLabel": "Dev Tooling & CS Fundamentals",
+  "videos": [
+   {
+    "id": "2Gmq-7zF9kM",
+    "title": "Debugging and Performance Optimization Tools"
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "title": "Understanding your language competency",
+  "domain": "tooling",
+  "domainLabel": "Dev Tooling & CS Fundamentals",
+  "videos": [
+   {
+    "id": "4finNgKp2dQ",
+    "title": "Mastering Programming Languages"
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "title": "Data Structures and Algorithms",
+  "domain": "tooling",
+  "domainLabel": "Dev Tooling & CS Fundamentals",
+  "videos": [
+   {
+    "id": "UNEvRt7UxCg",
+    "title": "Data Structures and Algorithms The Logic Engine of Efficient Software"
+   }
+  ]
+ },
+ {
+  "id": 19,
+  "title": "Computer Science Fundamentals",
+  "domain": "tooling",
+  "domainLabel": "Dev Tooling & CS Fundamentals",
+  "videos": [
+   {
+    "id": "onZPTWFFKas",
+    "title": "Computer Science Fundamental"
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "title": "The Strategic Role of Project Evaluation in Development Houses",
+  "domain": "evaluation",
+  "domainLabel": "Project Evaluation",
+  "videos": [
+   {
+    "id": "adonlKObj2o",
+    "title": "Strategic Project Evaluation for IT Development Houses"
+   }
+  ]
+ },
+ {
+  "id": 21,
+  "title": "Evaluating Project Suitability: Strategic and Operational Fit",
+  "domain": "evaluation",
+  "domainLabel": "Project Evaluation",
+  "videos": [
+   {
+    "id": "ytz4CcUrDM4",
+    "title": "Suitability Evaluation Framework"
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "title": "Assessing Development Difficulty: Technical and Managerial Challenges",
+  "domain": "evaluation",
+  "domainLabel": "Project Evaluation",
+  "videos": [
+   {
+    "id": "jU56h7TEwLs",
+    "title": "Development Difficulty Assessment"
+   }
+  ]
+ },
+ {
+  "id": 23,
+  "title": "Project Management and Team Dynamics: Ensuring Smooth Execution",
+  "domain": "evaluation",
+  "domainLabel": "Project Evaluation",
+  "videos": []
+ },
+ {
+  "id": 24,
+  "title": "Key Success Factors in Integrated Evaluation",
+  "domain": "evaluation",
+  "domainLabel": "Project Evaluation",
+  "videos": [
+   {
+    "id": "93fX6_h74DI",
+    "title": "Integrated Project Evaluation"
+   }
+  ]
+ },
+ {
+  "id": 25,
+  "title": "Case Study 1: HIPAA-Compliant EHR System for a Mid-Sized Hospital",
+  "domain": "evaluation",
+  "domainLabel": "Project Evaluation",
+  "videos": []
+ },
+ {
+  "id": 26,
+  "title": "Case Study 2: Generative AI-Powered Customer Support Chatbot for a E-Commerce Startup",
+  "domain": "evaluation",
+  "domainLabel": "Project Evaluation",
+  "videos": [
+   {
+    "id": "c9JsH-WxTt8",
+    "title": "AI Chatbot Implementation"
+   }
+  ]
+ },
+ {
+  "id": 27,
+  "title": "Best Practices and Continuous Improvement in Project Evaluation",
+  "domain": "evaluation",
+  "domainLabel": "Project Evaluation",
+  "videos": [
+   {
+    "id": "GWgaFNU3uGo",
+    "title": "Continuous Project Evaluation for IT Development Houses"
+   }
+  ]
+ },
+ {
+  "id": 28,
+  "title": "Emerging Trends in Project Evaluation",
+  "domain": "evaluation",
+  "domainLabel": "Project Evaluation",
+  "videos": [
+   {
+    "id": "bu0B11Lcnpw",
+    "title": "Future Ready IT Evaluation"
+   }
+  ]
+ },
+ {
+  "id": 29,
+  "title": "The Evolution of Project Management in Tech Industry",
+  "domain": "agile",
+  "domainLabel": "Agile & Project Management",
+  "videos": [
+   {
+    "id": "jeJkBMD3CpA",
+    "title": "The Evolution of Software Development"
+   }
+  ]
+ },
+ {
+  "id": 30,
+  "title": "Core Values and Principles of Agile Methodology",
+  "domain": "agile",
+  "domainLabel": "Agile & Project Management",
+  "videos": [
+   {
+    "id": "XI6Gc8lhdSM",
+    "title": "The Agile Manifesto"
+   }
+  ]
+ },
+ {
+  "id": 31,
+  "title": "Addressing the Unique Challenges of IT Development",
+  "domain": "agile",
+  "domainLabel": "Agile & Project Management",
+  "videos": [
+   {
+    "id": "L7ipZKGaqpc",
+    "title": "Thriving in Chaos Why Agile is Essential for IT Development"
+   }
+  ]
+ },
+ {
+  "id": 32,
+  "title": "Agile Methodologies: Scrum, Kanban, and Beyond",
+  "domain": "agile",
+  "domainLabel": "Agile & Project Management",
+  "videos": [
+   {
+    "id": "YoCifMFqOrU",
+    "title": "Scrum Framework Mastery"
+   }
+  ]
+ },
+ {
+  "id": 33,
+  "title": "Kanban for Workflow Optimization",
+  "domain": "agile",
+  "domainLabel": "Agile & Project Management",
+  "videos": [
+   {
+    "id": "Tj0LgF1qNZ0",
+    "title": "Kanban Visual Workflow Management"
+   },
+   {
+    "id": "c4fethvJ7t4",
+    "title": "Kanban for IT Development"
+   }
+  ]
+ },
+ {
+  "id": 34,
+  "title": "Hybrid Approaches and Extreme Programming (XP)",
+  "domain": "agile",
+  "domainLabel": "Agile & Project Management",
+  "videos": [
+   {
+    "id": "i2iM2u8Wfkg",
+    "title": "Beyond Scrum and Kanban Advanced Agile Approaches"
+   },
+   {
+    "id": "NJNzppA25l8",
+    "title": "Beyond Scrum and Kanban"
+   }
+  ]
+ },
+ {
+  "id": 35,
+  "title": "Agile Artifacts and Tools for Project Tracking",
+  "domain": "agile",
+  "domainLabel": "Agile & Project Management",
+  "videos": [
+   {
+    "id": "xhR7aRu-Zqg",
+    "title": "Essential Agile Artifacts Beyond Scrum and Kanban"
+   }
+  ]
+ },
+ {
+  "id": 36,
+  "title": "Purpose and Role of SRS in the Software Development Lifecycle (SDLC)",
+  "domain": "requirements",
+  "domainLabel": "Requirements & Technology Investigation",
+  "videos": []
+ },
+ {
+  "id": 37,
+  "title": "The Requirement Engineering Methodology: From Client Needs to Specification",
+  "domain": "requirements",
+  "domainLabel": "Requirements & Technology Investigation",
+  "videos": [
+   {
+    "id": "grG62arLYfs",
+    "title": "Requirements Engineering"
+   }
+  ]
+ },
+ {
+  "id": 38,
+  "title": "Defining Functional Requirements: Translating Client Vision into System Behavior",
+  "domain": "requirements",
+  "domainLabel": "Requirements & Technology Investigation",
+  "videos": [
+   {
+    "id": "IWkfF-aXr5k",
+    "title": "Functional Requirements The Heart of SRS"
+   }
+  ]
+ },
+ {
+  "id": 39,
+  "title": "Addressing Non-Functional Requirements: Ensuring Quality and Performance",
+  "domain": "requirements",
+  "domainLabel": "Requirements & Technology Investigation",
+  "videos": [
+   {
+    "id": "xbqy9h70S2Q",
+    "title": "Non Functional Requirements"
+   }
+  ]
+ },
+ {
+  "id": 40,
+  "title": "Security and Compliance Requirements",
+  "domain": "requirements",
+  "domainLabel": "Requirements & Technology Investigation",
+  "videos": []
+ },
+ {
+  "id": 41,
+  "title": "Usability, Reliability, and Maintainability Goals",
+  "domain": "requirements",
+  "domainLabel": "Requirements & Technology Investigation",
+  "videos": [
+   {
+    "id": "JKJ49y483pw",
+    "title": "Non Functional Requirements Usability Reliability and Maintainability"
+   }
+  ]
+ },
+ {
+  "id": 42,
+  "title": "Technical Constraints and Interface Specifications: Bridging Design and Implementation",
+  "domain": "requirements",
+  "domainLabel": "Requirements & Technology Investigation",
+  "videos": [
+   {
+    "id": "ggN9zGIMnY0",
+    "title": "Technical Constraints and Interface Specifications"
+   }
+  ]
+ },
+ {
+  "id": 43,
+  "title": "Purpose and Significance of Technology Investigation Reports",
+  "domain": "requirements",
+  "domainLabel": "Requirements & Technology Investigation",
+  "videos": [
+   {
+    "id": "Qgq8G2Ww6EM",
+    "title": "Technology Investigation Report"
+   }
+  ]
+ },
+ {
+  "id": 44,
+  "title": "Preparatory Phase: Setting the Foundation for Investigation",
+  "domain": "requirements",
+  "domainLabel": "Requirements & Technology Investigation",
+  "videos": []
+ },
+ {
+  "id": 45,
+  "title": "Core Components of the Technology Investigation Report",
+  "domain": "requirements",
+  "domainLabel": "Requirements & Technology Investigation",
+  "videos": [
+   {
+    "id": "TIl09Nxuzho",
+    "title": "Technical Landscape Analysis"
+   }
+  ]
+ },
+ {
+  "id": 46,
+  "title": "Risk Assessment and Mitigation Strategies",
+  "domain": "requirements",
+  "domainLabel": "Requirements & Technology Investigation",
+  "videos": [
+   {
+    "id": "ThNxIG7Nveg",
+    "title": "IT Risk Management Framework"
+   }
+  ]
+ },
+ {
+  "id": 47,
+  "title": "Conclusion and Best Practices for Implementation",
+  "domain": "requirements",
+  "domainLabel": "Requirements & Technology Investigation",
+  "videos": []
+ },
+ {
+  "id": 48,
+  "title": "Introduction to Software Licensing Models for IT Development Houses",
+  "domain": "licensing",
+  "domainLabel": "Software Licensing",
+  "videos": [
+   {
+    "id": "ZQoZPiwQYMs",
+    "title": "Software Licensing Fundamentals"
+   }
+  ]
+ },
+ {
+  "id": 49,
+  "title": "Key Software Licensing Models: Classification and Analysis",
+  "domain": "licensing",
+  "domainLabel": "Software Licensing",
+  "videos": [
+   {
+    "id": "YjlWuiIK_Pk",
+    "title": "Software Licensing Models"
+   }
+  ]
+ },
+ {
+  "id": 50,
+  "title": "Impact of Licensing Models on IT Development House Operations",
+  "domain": "licensing",
+  "domainLabel": "Software Licensing",
+  "videos": [
+   {
+    "id": "6jyKaKANpzw",
+    "title": "Software Licensing Models Strategic Impact on IT Development"
+   }
+  ]
+ },
+ {
+  "id": 51,
+  "title": "Strategic Considerations for Selecting Licensing Models",
+  "domain": "licensing",
+  "domainLabel": "Software Licensing",
+  "videos": []
+ },
+ {
+  "id": 52,
+  "title": "Case Studies: Successes and Challenges in Licensing Strategy",
+  "domain": "licensing",
+  "domainLabel": "Software Licensing",
+  "videos": [
+   {
+    "id": "wMyS2or7ABY",
+    "title": "Software Licensing Success Stories and Lessons"
+   }
+  ]
+ },
+ {
+  "id": 53,
+  "title": "Future Trends and Emerging Licensing Paradigms",
+  "domain": "licensing",
+  "domainLabel": "Software Licensing",
+  "videos": [
+   {
+    "id": "wgkc0yDLVqw",
+    "title": "Future Trends in Software Licensing"
+   }
+  ]
+ },
+ {
+  "id": 54,
+  "title": "Foundational Ethical Frameworks in Software Development",
+  "domain": "ethics",
+  "domainLabel": "Ethics in Software",
+  "videos": []
+ },
+ {
+  "id": 55,
+  "title": "Data Ethics: Guardianship of User Information",
+  "domain": "ethics",
+  "domainLabel": "Ethics in Software",
+  "videos": [
+   {
+    "id": "jffXqt0Ts8g",
+    "title": "Ethical Data Practices in Software Development"
+   }
+  ]
+ },
+ {
+  "id": 56,
+  "title": "Algorithmic Ethics: Designing for Fairness and Transparency",
+  "domain": "ethics",
+  "domainLabel": "Ethics in Software",
+  "videos": [
+   {
+    "id": "iB9SWw04G1s",
+    "title": "Addressing Bias in Algorithm Design and Development"
+   }
+  ]
+ },
+ {
+  "id": 57,
+  "title": "Professional Ethics: Cultivating a Responsible Development Culture",
+  "domain": "ethics",
+  "domainLabel": "Ethics in Software",
+  "videos": [
+   {
+    "id": "wrH6dW5GzVE",
+    "title": "Code Quality and Technical Integrity"
+   }
+  ]
+ },
+ {
+  "id": 58,
+  "title": "User-Centric Ethics: Prioritizing Human Well-Being",
+  "domain": "ethics",
+  "domainLabel": "Ethics in Software",
+  "videos": [
+   {
+    "id": "5iOHscldOAk",
+    "title": "Designing for Accessibility and Inclusivity"
+   }
+  ]
+ },
+ {
+  "id": 59,
+  "title": "Social and Environmental Ethics: A Broader Responsibility",
+  "domain": "ethics",
+  "domainLabel": "Ethics in Software",
+  "videos": [
+   {
+    "id": "ZGLjjd-YVwU",
+    "title": "Technology as a Force for Social Good"
+   }
+  ]
+ },
+ {
+  "id": 60,
+  "title": "Foundational Framework: Defining Cyber Security in the Context of Software Development",
+  "domain": "security",
+  "domainLabel": "Cyber Security",
+  "videos": [
+   {
+    "id": "mi6Tpmvu-fw",
+    "title": "Core Principles of Cyber Security for Development Houses"
+   }
+  ]
+ },
+ {
+  "id": 61,
+  "title": "Secure Software Development Lifecycle (SDLC): Integrating Security from Requirements to Deployment",
+  "domain": "security",
+  "domainLabel": "Cyber Security",
+  "videos": [
+   {
+    "id": "DX5t9a8nsmc",
+    "title": "Security by Design in Software Development"
+   }
+  ]
+ },
+ {
+  "id": 62,
+  "title": "Technical Practices: Defending Against Modern Threat Vectors",
+  "domain": "security",
+  "domainLabel": "Cyber Security",
+  "videos": [
+   {
+    "id": "RophG5iYBnM",
+    "title": "Advanced Threat Mitigation Techniques"
+   }
+  ]
+ },
+ {
+  "id": 63,
+  "title": "Organizational Strategy: Building a Security-Centric Culture",
+  "domain": "security",
+  "domainLabel": "Cyber Security",
+  "videos": [
+   {
+    "id": "c1zmu986Vn0",
+    "title": "Cross Functional Cybersecurity"
+   }
+  ]
+ },
+ {
+  "id": 64,
+  "title": "Post-Deployment: Monitoring, Maintenance, and Incident Response",
+  "domain": "security",
+  "domainLabel": "Cyber Security",
+  "videos": [
+   {
+    "id": "DD_5_WlJUcI",
+    "title": "Continuous Monitoring and Vulnerability Management"
+   }
+  ]
+ },
+ {
+  "id": 65,
+  "title": "Introduction to Formal Communication in IT Development Houses",
+  "domain": "communication",
+  "domainLabel": "Formal Communication",
+  "videos": [
+   {
+    "id": "TU27rTA26aw",
+    "title": "The Role of Formal Communication in Software Projects"
+   }
+  ]
+ },
+ {
+  "id": 66,
+  "title": "Structuring Formal Communication Frameworks",
+  "domain": "communication",
+  "domainLabel": "Formal Communication",
+  "videos": [
+   {
+    "id": "V3INDwAsBj0",
+    "title": "Communication Channels in IT Development"
+   }
+  ]
+ },
+ {
+  "id": 67,
+  "title": "Formal Documentation as a Pillar of Communication",
+  "domain": "communication",
+  "domainLabel": "Formal Communication",
+  "videos": []
+ },
+ {
+  "id": 68,
+  "title": "Formal Communication in Cross - Functional Collaboration",
+  "domain": "communication",
+  "domainLabel": "Formal Communication",
+  "videos": [
+   {
+    "id": "7_X_XYWMRNg",
+    "title": "Iterative Development and Cross Team Collaboration"
+   }
+  ]
+ },
+ {
+  "id": 69,
+  "title": "Tools and Technologies for Formal Communication",
+  "domain": "communication",
+  "domainLabel": "Formal Communication",
+  "videos": []
+ },
+ {
+  "id": 70,
+  "title": "Case Studies: Best Practices in Formal Communication",
+  "domain": "communication",
+  "domainLabel": "Formal Communication",
+  "videos": []
+ },
+ {
+  "id": 71,
+  "title": "Introduction to Commercialization in Software Development",
+  "domain": "commercial",
+  "domainLabel": "Commercialization",
+  "videos": [
+   {
+    "id": "VGefFMsKEdg",
+    "title": "Commercialization in Software Development"
+   }
+  ]
+ },
+ {
+  "id": 72,
+  "title": "Market Positioning and Demand Analysis for Commercial Software",
+  "domain": "commercial",
+  "domainLabel": "Commercialization",
+  "videos": []
+ },
+ {
+  "id": 73,
+  "title": "Product Design and Commercial Viability Assessment",
+  "domain": "commercial",
+  "domainLabel": "Commercialization",
+  "videos": [
+   {
+    "id": "sJB8XvleOT8",
+    "title": "Aligning Technical Features with Commercial Goals"
+   }
+  ]
+ },
+ {
+  "id": 74,
+  "title": "Integrating Commercialization into the Development Lifecycle",
+  "domain": "commercial",
+  "domainLabel": "Commercialization",
+  "videos": []
+ },
+ {
+  "id": 75,
+  "title": "Market Entry Strategies for Commercial Software Products",
+  "domain": "commercial",
+  "domainLabel": "Commercialization",
+  "videos": [
+   {
+    "id": "Z-X7Mr-79pk",
+    "title": "Pricing Strategies for Competitive Positioning"
+   }
+  ]
+ },
+ {
+  "id": 76,
+  "title": "Challenges and Risk Management in Software Commercialization",
+  "domain": "commercial",
+  "domainLabel": "Commercialization",
+  "videos": [
+   {
+    "id": "wTSQVIHawe0",
+    "title": "Common Commercialization Challenges for IT Development Houses"
+   }
+  ]
+ },
+ {
+  "id": 77,
+  "title": "Introduction to Software Architecture Specification in IT Development Houses",
+  "domain": "sas",
+  "domainLabel": "Software Architecture Specification",
+  "videos": [
+   {
+    "id": "TIJnPiMWjnk",
+    "title": "Software Architecture Specification The Foundation of Development Success"
+   }
+  ]
+ },
+ {
+  "id": 78,
+  "title": "Preparatory Steps: Requirements Analysis and Contextualization",
+  "domain": "sas",
+  "domainLabel": "Software Architecture Specification",
+  "videos": [
+   {
+    "id": "rnMqRbK7Tb8",
+    "title": "Stakeholder Driven Requirements Elicitation"
+   }
+  ]
+ },
+ {
+  "id": 79,
+  "title": "Core Components of a Development House-Grade SAS",
+  "domain": "sas",
+  "domainLabel": "Software Architecture Specification",
+  "videos": [
+   {
+    "id": "6thhguKsOAQ",
+    "title": "Architectural Styles and Pattern Selection"
+   },
+   {
+    "id": "rimDZgrAz5w",
+    "title": "Microservices and Legacy Modernization"
+   }
+  ]
+ },
+ {
+  "id": 80,
+  "title": "Documenting Non - Functional Requirements and Quality Attributes",
+  "domain": "sas",
+  "domainLabel": "Software Architecture Specification",
+  "videos": [
+   {
+    "id": "_q3havrFXZM",
+    "title": "Non Functional Requirements"
+   }
+  ]
+ },
+ {
+  "id": 81,
+  "title": "Collaboration and Review: Ensuring SAS Validity and Alignment",
+  "domain": "sas",
+  "domainLabel": "Software Architecture Specification",
+  "videos": []
+ },
+ {
+  "id": 82,
+  "title": "Case Studies: SAS Best Practices from Leading Development Houses",
+  "domain": "sas",
+  "domainLabel": "Software Architecture Specification",
+  "videos": []
+ },
+ {
+  "id": 83,
+  "title": "Introduction to Handover Documents in IT Development",
+  "domain": "handover",
+  "domainLabel": "IT Handover Documentation",
+  "videos": [
+   {
+    "id": "jLmdUZL-ghY",
+    "title": "Effective IT Handover Documentation"
+   }
+  ]
+ },
+ {
+  "id": 84,
+  "title": "Core Elements of a Comprehensive Handover Document",
+  "domain": "handover",
+  "domainLabel": "IT Handover Documentation",
+  "videos": [
+   {
+    "id": "djGGKft72Ug",
+    "title": "Stakeholder Collaboration in IT Handover Documents"
+   }
+  ]
+ },
+ {
+  "id": 85,
+  "title": "Structuring the Handover Document: Logical Flow and Formatting",
+  "domain": "handover",
+  "domainLabel": "IT Handover Documentation",
+  "videos": [
+   {
+    "id": "OL4L_IPeTis",
+    "title": "Project Handover Documentation"
+   }
+  ]
+ },
+ {
+  "id": 86,
+  "title": "Best Practices for IT Development Houses in Drafting Handover Documents",
+  "domain": "handover",
+  "domainLabel": "IT Handover Documentation",
+  "videos": [
+   {
+    "id": "hbVuniR7IHU",
+    "title": "Technical Accuracy in IT Handover Documents"
+   }
+  ]
+ },
+ {
+  "id": 87,
+  "title": "Quality Assurance and Version Control for Handover Documents",
+  "domain": "handover",
+  "domainLabel": "IT Handover Documentation",
+  "videos": [
+   {
+    "id": "MGK7q-GMZvc",
+    "title": "Technical Accuracy in IT Handover Documents"
+   }
+  ]
+ },
+ {
+  "id": 88,
+  "title": "Case Study: Practical Application of Handover Document Drafting",
+  "domain": "handover",
+  "domainLabel": "IT Handover Documentation",
+  "videos": [
+   {
+    "id": "-Ej5ZGjIKQg",
+    "title": "Enterprise Resource Planning ERP System Handover"
+   }
+  ]
+ },
+ {
+  "id": 89,
+  "title": "Module 89 (content coming soon)",
+  "domain": "handover",
+  "domainLabel": "IT Handover Documentation",
+  "videos": []
+ },
+ {
+  "id": 90,
+  "title": "Module 90 (content coming soon)",
+  "domain": "handover",
+  "domainLabel": "IT Handover Documentation",
+  "videos": []
+ }
+]

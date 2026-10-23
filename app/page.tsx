@@ -3,7 +3,7 @@ import { SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 import { Directory } from "@/components/directory/directory";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/brand/brand-logo";
-import { LogOut, Upload } from "lucide-react";
+import { GraduationCap, LogOut, Upload } from "lucide-react";
 import maintenanceNotice from "@/data/maintenance-notice.json";
 import { MaintenanceNotice } from "@/components/maintenance-notice";
 
@@ -40,6 +40,13 @@ export default async function Home() {
                 )}
               </div>
             </div>
+            <a
+              href="/lessons"
+              className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm hover:bg-surface-2"
+            >
+              <GraduationCap className="size-4" />
+              <span className="hidden sm:inline">Lessons</span>
+            </a>
             {session?.role === "Lecturer" && (
               <a
                 href="/admin"
