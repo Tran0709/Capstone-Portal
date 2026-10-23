@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
-import { Loader2, Mail } from "lucide-react";
+import { GraduationCap, Loader2, Mail, School } from "lucide-react";
 
 import { BrandLogo } from "@/components/brand/brand-logo";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/input-otp";
 
 type Step = "request" | "code";
+type Role = "Student" | "Lecturer";
 
 export function LoginForm() {
   const router = useRouter();
@@ -24,6 +25,7 @@ export function LoginForm() {
 
   const [step, setStep] = React.useState<Step>("request");
   const [email, setEmail] = React.useState("");
+  const [role, setRole] = React.useState<Role>("Student");
   const [code, setCode] = React.useState("");
   const [loading, setLoading] = React.useState(false);
 
@@ -60,7 +62,7 @@ export function LoginForm() {
       const res = await fetch("/api/auth/verify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, code: value }),
+        body: JSON.stringify({ email, code: value, role }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -98,6 +100,37 @@ export function LoginForm() {
         {step === "request" ? (
           <form onSubmit={requestCode} className="flex flex-col gap-4">
             <div className="grid gap-2">
+              <Label>I am a</Label>
+              <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Sign in as">
+                {([
+                  ["Student", GraduationCap],
+                  ["Lecturer", School],
+                ] as const).map(([value, Icon]) => (
+                  <button
+                    key={value}
+                    type="button"
+                    role="radio"
+                    aria-checked={role === value}
+                    onClick={() => setRole(value)}
+                    disabled={loading}
+                    className={`flex items-center justify-center gap-2 rounded-md border px-3 py-2 text-sm transition-colors ${
+                      role === value
+                        ? "border-primary bg-primary/10 text-foreground"
+                        : "text-muted-foreground hover:bg-surface-2"
+                    }`}
+                  >
+                    <Icon className="size-4" />
+                    {value}
+                  </button>
+                ))}
+              </div>
+              {role === "Lecturer" && (
+                <p className="text-xs text-muted-foreground">
+                  Lecturers can add, edit and delete lessons. Only registered lecturer emails are accepted.
+                </p>
+              )}
+            </div>
+            <div className="grid gap-2">
               <Label htmlFor="otp-email">Email</Label>
               <Input
                 id="otp-email"
@@ -121,7 +154,8 @@ export function LoginForm() {
         ) : (
           <div className="flex flex-col items-center gap-5">
             <p className="text-center text-sm text-muted-foreground">
-              Enter the 6-digit code sent to <span className="text-foreground">{email}</span>.
+              Enter the 6-digit code sent to <span className="text-foreground">{email}</span>
+              {" "}(signing in as {role.toLowerCase()}).
             </p>
             <InputOTP
               maxLength={6}

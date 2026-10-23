@@ -29,6 +29,8 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/api/projects": ["./data/portal.db"],
     "/api/admin/upload": ["./data/portal.db"],
+    "/api/lessons": ["./data/portal.db"],
+    "/api/lessons/files/[fileId]": ["./data/portal.db"],
     "/api/auth/verify": ["./data/portal.db"],
   },
 

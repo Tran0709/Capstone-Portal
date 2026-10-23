@@ -18,10 +18,12 @@ const challengeCookieOptions = {
 export async function POST(req: Request) {
   let email = "";
   let code = "";
+  let wantedRole: "Lecturer" | "Student" = "Student";
   try {
     const body = await req.json();
     email = String(body?.email ?? "").trim();
     code = String(body?.code ?? "").trim();
+    wantedRole = body?.role === "Lecturer" ? "Lecturer" : "Student";
   } catch {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
@@ -54,9 +56,23 @@ export async function POST(req: Request) {
   }
 
   const known = await findUser(email);
-  const session = await createSessionToken(
-    known ? toSessionUser(known) : { email }
-  );
+
+  // Lecturer sign-in is only for accounts registered as lecturers in data/users.json.
+  if (wantedRole === "Lecturer" && known?.role !== "Lecturer") {
+    const denied = NextResponse.json(
+      {
+        error:
+          "This email is not registered as a lecturer. Sign in as a student, or ask the portal owner to add you as a lecturer.",
+      },
+      { status: 403 }
+    );
+    denied.cookies.set(CHALLENGE_COOKIE, "", { path: "/", maxAge: 0 });
+    return denied;
+  }
+
+  // The role chosen on the login screen decides what this session can do.
+  const base = known ? toSessionUser(known) : { email };
+  const session = await createSessionToken({ ...base, role: wantedRole });
   const res = NextResponse.json({ ok: true });
   res.cookies.set(SESSION_COOKIE, session, sessionCookieOptions);
   res.cookies.set(CHALLENGE_COOKIE, "", { path: "/", maxAge: 0 });

@@ -1,13 +1,18 @@
 import Link from "next/link";
+import { cookies } from "next/headers";
 import { ArrowLeft } from "lucide-react";
+import { SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 import { BrandLogo } from "@/components/brand/brand-logo";
-import { LessonsBrowser, type Lesson } from "@/components/lessons/lessons-browser";
-import lessons from "@/data/lessons.json";
+import { LessonsBrowser } from "@/components/lessons/lessons-browser";
 
 export const metadata = { title: "Lessons | Curtin ISAD 3000 Portal" };
+export const dynamic = "force-dynamic";
 
-export default function LessonsPage() {
-  const withVideo = (lessons as Lesson[]).filter((l) => l.videos.length > 0).length;
+export default async function LessonsPage() {
+  const token = (await cookies()).get(SESSION_COOKIE)?.value;
+  const session = await verifySessionToken(token);
+  const isLecturer = session?.role === "Lecturer";
+
   return (
     <div className="min-h-svh bg-background">
       <header className="sticky top-0 z-40 border-b bg-surface/80 backdrop-blur">
@@ -27,10 +32,12 @@ export default function LessonsPage() {
       <main className="mx-auto max-w-4xl px-4 py-8 md:px-6">
         <h1 className="text-xl font-semibold">Curtin ISAD 3000 lessons</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          {withVideo} lecture videos and 88 lesson documents across {lessons.length} modules. Modules 89–90 are coming soon.
+          {isLecturer
+            ? "Add lessons with documents and videos. Students and mentors can watch and download them."
+            : "Watch lecture videos and download lesson documents."}
         </p>
         <div className="mt-6">
-          <LessonsBrowser lessons={lessons as Lesson[]} />
+          <LessonsBrowser isLecturer={isLecturer} />
         </div>
       </main>
     </div>
