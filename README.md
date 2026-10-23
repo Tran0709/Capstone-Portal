@@ -71,6 +71,14 @@ Open http://localhost:3000 → redirected to `/login`. Use a demo account above.
 To test the email-code flow without sending mail, set `AUTH_DEV_ECHO=1` in
 `.env.local` (dev only) — the code is returned to the page instead of emailed.
 
+## Maintenance notifications
+
+After completing portal maintenance, update `data/maintenance-notice.json` with
+a new unique `id`, a short `title`, and a user-facing `message`. The notice is
+shown after sign-in once per account in that browser. Users can dismiss it;
+changing the ID for a later maintenance update makes that notice appear to
+everyone again.
+
 ## Deployment
 
 See **DEPLOY.md**. Deploys to Vercel with no extra config; **only `SESSION_SECRET`

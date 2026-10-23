@@ -15,6 +15,12 @@ test("users: lecturers are exactly the authorised pair", () => {
   const lec = j("data/users.json").filter((u) => u.role === "Lecturer").map((u) => u.email).sort();
   assert.deepEqual(lec, ["goladin@gmail.com", "murphy.choy@icloud.com"]);
 });
+test("maintenance notice: has an id, title, and message", () => {
+  const notice = j("data/maintenance-notice.json");
+  assert.ok(typeof notice.id === "string" && notice.id.trim());
+  assert.ok(typeof notice.title === "string" && notice.title.trim());
+  assert.ok(typeof notice.message === "string" && notice.message.trim());
+});
 test("no secrets committed", () => {
   const bad = [/re_[A-Za-z0-9]{20,}/, /sk-ant-[A-Za-z0-9_-]{20,}/, /\b\d{8,}:[A-Za-z0-9_-]{30,}\b/, /^SMTP_PASS=[^\s#]+/m];
   const skip = new Set(["node_modules", ".next", ".git", "data"]);

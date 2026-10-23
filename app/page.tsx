@@ -4,6 +4,8 @@ import { Directory } from "@/components/directory/directory";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/brand/brand-logo";
 import { LogOut, Upload } from "lucide-react";
+import maintenanceNotice from "@/data/maintenance-notice.json";
+import { MaintenanceNotice } from "@/components/maintenance-notice";
 
 export default async function Home() {
   const token = (await cookies()).get(SESSION_COOKIE)?.value;
@@ -58,6 +60,13 @@ export default async function Home() {
       </header>
 
       <Directory />
+      {session?.email && (
+        <MaintenanceNotice
+          key={`${session.email}:${maintenanceNotice.id}`}
+          email={session.email}
+          notice={maintenanceNotice}
+        />
+      )}
     </div>
   );
 }
