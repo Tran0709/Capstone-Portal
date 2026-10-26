@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import { isValidEmail, isAllowed } from "@/lib/allowlist";
 import { CHALLENGE_COOKIE, verifyChallenge } from "@/lib/otp-challenge";
 import { createSessionToken, SESSION_COOKIE, sessionCookieOptions } from "@/lib/auth";
-import { findUser, toSessionUser } from "@/lib/users";
+import { findUser, toSessionUser, createUser, isApprovedLecturer } from "@/lib/users";
 
 export const runtime = "nodejs";
 
@@ -18,11 +18,15 @@ const challengeCookieOptions = {
 export async function POST(req: Request) {
   let email = "";
   let code = "";
+  let mode: "signin" | "signup" = "signin";
+  let name = "";
   let wantedRole: "Lecturer" | "Student" = "Student";
   try {
     const body = await req.json();
     email = String(body?.email ?? "").trim();
     code = String(body?.code ?? "").trim();
+    mode = body?.mode === "signup" ? "signup" : "signin";
+    name = String(body?.name ?? "").trim().slice(0, 80);
     wantedRole = body?.role === "Lecturer" ? "Lecturer" : "Student";
   } catch {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
@@ -56,24 +60,49 @@ export async function POST(req: Request) {
   }
 
   const known = await findUser(email);
+  const clear = (r: NextResponse) => {
+    r.cookies.set(CHALLENGE_COOKIE, "", { path: "/", maxAge: 0 });
+    return r;
+  };
 
-  // Lecturer sign-in is only for accounts registered as lecturers in data/users.json.
-  if (wantedRole === "Lecturer" && known?.role !== "Lecturer") {
-    const denied = NextResponse.json(
-      {
-        error:
-          "This email is not registered as a lecturer. Sign in as a student, or ask the portal owner to add you as a lecturer.",
-      },
-      { status: 403 }
-    );
-    denied.cookies.set(CHALLENGE_COOKIE, "", { path: "/", maxAge: 0 });
-    return denied;
+  let user;
+  let lecturerDenied = false;
+  if (mode === "signup") {
+    if (known) {
+      return clear(
+        NextResponse.json(
+          { error: "An account with this email already exists. Sign in instead." },
+          { status: 409 }
+        )
+      );
+    }
+    const approved = wantedRole === "Lecturer" && (await isApprovedLecturer(email));
+    lecturerDenied = wantedRole === "Lecturer" && !approved;
+    try {
+      user = await createUser(email, name, approved ? "Lecturer" : "Student");
+    } catch (err) {
+      console.error("createUser failed:", (err as Error)?.message);
+      return clear(
+        NextResponse.json(
+          { error: "Could not save the account (database is read-only). Set DATABASE_URL on the server." },
+          { status: 500 }
+        )
+      );
+    }
+  } else {
+    if (!known) {
+      return clear(
+        NextResponse.json(
+          { error: "No account found for that email. Create an account first." },
+          { status: 404 }
+        )
+      );
+    }
+    user = toSessionUser(known);
   }
 
-  // The role chosen on the login screen decides what this session can do.
-  const base = known ? toSessionUser(known) : { email };
-  const session = await createSessionToken({ ...base, role: wantedRole });
-  const res = NextResponse.json({ ok: true });
+  const session = await createSessionToken({ email: user.email, name: user.name, role: user.role });
+  const res = NextResponse.json({ ok: true, lecturerDenied });
   res.cookies.set(SESSION_COOKIE, session, sessionCookieOptions);
   res.cookies.set(CHALLENGE_COOKIE, "", { path: "/", maxAge: 0 });
   return res;

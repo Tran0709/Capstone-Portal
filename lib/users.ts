@@ -37,3 +37,25 @@ export async function findUser(email: string): Promise<StoredUser | undefined> {
 export function toSessionUser(user: StoredUser): SessionUser {
   return { email: user.email, name: user.name, role: user.role };
 }
+
+/** True if this email may register/sign in as a lecturer. */
+export async function isApprovedLecturer(email: string): Promise<boolean> {
+  const key = email.trim().toLowerCase();
+  if (bundledUsers.some((u) => String(u.email).toLowerCase() === key && u.role === "Lecturer")) return true;
+  const list = (process.env.LECTURER_EMAILS ?? "")
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean);
+  return list.includes(key);
+}
+
+export async function createUser(email: string, name: string, role: "Student" | "Lecturer"): Promise<StoredUser> {
+  const key = email.trim().toLowerCase();
+  const display = name.trim() || key.split("@")[0];
+  const conn = await db();
+  await conn.execute({
+    sql: "INSERT INTO users (email,name,role) VALUES (?,?,?) ON CONFLICT(email) DO NOTHING",
+    args: [key, display, role],
+  });
+  return { email: key, name: display, role };
+}

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
-import { GraduationCap, Loader2, Mail, School } from "lucide-react";
+import { GraduationCap, Loader2, Mail, School, UserPlus } from "lucide-react";
 
 import { BrandLogo } from "@/components/brand/brand-logo";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/input-otp";
 
 type Step = "request" | "code";
+type Mode = "signin" | "signup";
 type Role = "Student" | "Lecturer";
 
 export function LoginForm() {
@@ -23,11 +24,19 @@ export function LoginForm() {
   const search = useSearchParams();
   const from = search.get("from") || "/";
 
+  const [mode, setMode] = React.useState<Mode>("signin");
   const [step, setStep] = React.useState<Step>("request");
   const [email, setEmail] = React.useState("");
+  const [name, setName] = React.useState("");
   const [role, setRole] = React.useState<Role>("Student");
   const [code, setCode] = React.useState("");
   const [loading, setLoading] = React.useState(false);
+
+  function switchMode(next: Mode) {
+    setMode(next);
+    setStep("request");
+    setCode("");
+  }
 
   async function requestCode(e?: React.FormEvent) {
     e?.preventDefault();
@@ -62,14 +71,31 @@ export function LoginForm() {
       const res = await fetch("/api/auth/verify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, code: value, role }),
+        body: JSON.stringify({
+          email,
+          code: value,
+          mode,
+          ...(mode === "signup" ? { name, role } : {}),
+        }),
       });
       const data = await res.json();
       if (!res.ok) {
         setCode("");
+        if (res.status === 404 || res.status === 409) {
+          // No account yet / account already exists: send them to the right tab.
+          setStep("request");
+          switchMode(res.status === 404 ? "signup" : "signin");
+        }
         return toast.error(data.error ?? "Incorrect code.");
       }
-      toast.success("Signed in.");
+      if (data.lecturerDenied) {
+        toast.message("Account created as a student", {
+          description:
+            "Lecturer access needs approval. Ask the portal owner to add your email as a lecturer.",
+        });
+      } else {
+        toast.success(mode === "signup" ? "Account created. Welcome!" : "Signed in.");
+      }
       router.replace(from);
       router.refresh();
     } catch {
@@ -92,44 +118,46 @@ export function LoginForm() {
       </div>
 
       <div className="rounded-2xl border bg-surface/70 p-6 shadow-2xl backdrop-blur">
-        <div className="mb-6 flex items-center gap-2 text-sm font-medium text-foreground">
-          <Mail className="size-4 text-primary" />
-          Sign in with an email code
+        <div className="mb-5 grid grid-cols-2 gap-1 rounded-lg border bg-surface-2 p-1 text-sm" role="tablist">
+          {([
+            ["signin", "Sign in", Mail],
+            ["signup", "Create account", UserPlus],
+          ] as const).map(([value, label, Icon]) => (
+            <button
+              key={value}
+              type="button"
+              role="tab"
+              aria-selected={mode === value}
+              onClick={() => switchMode(value)}
+              disabled={loading}
+              className={`flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 transition-colors ${
+                mode === value ? "bg-surface font-medium text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <Icon className="size-4" />
+              {label}
+            </button>
+          ))}
         </div>
 
         {step === "request" ? (
           <form onSubmit={requestCode} className="flex flex-col gap-4">
-            <div className="grid gap-2">
-              <Label>I am a</Label>
-              <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Sign in as">
-                {([
-                  ["Student", GraduationCap],
-                  ["Lecturer", School],
-                ] as const).map(([value, Icon]) => (
-                  <button
-                    key={value}
-                    type="button"
-                    role="radio"
-                    aria-checked={role === value}
-                    onClick={() => setRole(value)}
-                    disabled={loading}
-                    className={`flex items-center justify-center gap-2 rounded-md border px-3 py-2 text-sm transition-colors ${
-                      role === value
-                        ? "border-primary bg-primary/10 text-foreground"
-                        : "text-muted-foreground hover:bg-surface-2"
-                    }`}
-                  >
-                    <Icon className="size-4" />
-                    {value}
-                  </button>
-                ))}
+            {mode === "signup" && (
+              <div className="grid gap-2">
+                <Label htmlFor="signup-name">
+                  Name <span className="text-muted-foreground">(optional)</span>
+                </Label>
+                <Input
+                  id="signup-name"
+                  autoComplete="name"
+                  placeholder="Your name"
+                  maxLength={80}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  disabled={loading}
+                />
               </div>
-              {role === "Lecturer" && (
-                <p className="text-xs text-muted-foreground">
-                  Lecturers can add, edit and delete lessons. Only registered lecturer emails are accepted.
-                </p>
-              )}
-            </div>
+            )}
             <div className="grid gap-2">
               <Label htmlFor="otp-email">Email</Label>
               <Input
@@ -143,9 +171,44 @@ export function LoginForm() {
                 disabled={loading}
               />
             </div>
+            {mode === "signup" && (
+              <div className="grid gap-2">
+                <Label>
+                  Account type <span className="text-muted-foreground">(optional)</span>
+                </Label>
+                <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Account type">
+                  {([
+                    ["Student", GraduationCap],
+                    ["Lecturer", School],
+                  ] as const).map(([value, Icon]) => (
+                    <button
+                      key={value}
+                      type="button"
+                      role="radio"
+                      aria-checked={role === value}
+                      onClick={() => setRole(value)}
+                      disabled={loading}
+                      className={`flex items-center justify-center gap-2 rounded-md border px-3 py-2 text-sm transition-colors ${
+                        role === value
+                          ? "border-primary bg-primary/10 text-foreground"
+                          : "text-muted-foreground hover:bg-surface-2"
+                      }`}
+                    >
+                      <Icon className="size-4" />
+                      {value}
+                    </button>
+                  ))}
+                </div>
+                <p className="text-xs text-muted-foreground">
+                  {role === "Lecturer"
+                    ? "Lecturers can add, edit and delete lessons. Lecturer access is only granted to approved emails; otherwise your account is created as a student."
+                    : "Students can browse the directory and watch and download lessons."}
+                </p>
+              </div>
+            )}
             <Button type="submit" className="w-full" disabled={loading || !email}>
               {loading && <Loader2 className="animate-spin" />}
-              Email me a code
+              {mode === "signup" ? "Email me a code to create my account" : "Email me a code"}
             </Button>
             <p className="text-center text-xs text-muted-foreground">
               We&apos;ll send a 6-digit code that expires in 10 minutes.
@@ -155,7 +218,7 @@ export function LoginForm() {
           <div className="flex flex-col items-center gap-5">
             <p className="text-center text-sm text-muted-foreground">
               Enter the 6-digit code sent to <span className="text-foreground">{email}</span>
-              {" "}(signing in as {role.toLowerCase()}).
+              {mode === "signup" ? " to create your account." : "."}
             </p>
             <InputOTP
               maxLength={6}
@@ -198,7 +261,7 @@ export function LoginForm() {
       </div>
 
       <p className="mt-6 text-center text-xs text-muted-foreground">
-        Access is restricted to approved accounts.
+        {mode === "signin" ? "New here? Choose “Create account” above." : "Already registered? Choose “Sign in” above."}
       </p>
     </div>
   );
