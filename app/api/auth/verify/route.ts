@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import { isValidEmail, isAllowed } from "@/lib/allowlist";
 import { CHALLENGE_COOKIE, verifyChallenge } from "@/lib/otp-challenge";
 import { createSessionToken, SESSION_COOKIE, sessionCookieOptions } from "@/lib/auth";
-import { findUser, toSessionUser, createUser, isApprovedLecturer } from "@/lib/users";
+import { findUser, toSessionUser, createUser, isApprovedLecturer, promoteToLecturer, dbWritable } from "@/lib/users";
 
 export const runtime = "nodejs";
 
@@ -78,27 +78,42 @@ export async function POST(req: Request) {
     }
     const approved = wantedRole === "Lecturer" && (await isApprovedLecturer(email));
     lecturerDenied = wantedRole === "Lecturer" && !approved;
+    const role = approved ? "Lecturer" : "Student";
     try {
-      user = await createUser(email, name, approved ? "Lecturer" : "Student");
+      user = await createUser(email, name, role);
     } catch (err) {
-      console.error("createUser failed:", (err as Error)?.message);
-      return clear(
-        NextResponse.json(
-          { error: "Could not save the account (database is read-only). Set DATABASE_URL on the server." },
-          { status: 500 }
-        )
-      );
+      // Read-only host (no DATABASE_URL): sign the user in without persisting.
+      console.warn("createUser skipped (read-only DB):", (err as Error)?.message);
+      user = { email: email.toLowerCase(), name: name || email.split("@")[0], role };
     }
   } else {
     if (!known) {
-      return clear(
-        NextResponse.json(
-          { error: "No account found for that email. Create an account first." },
-          { status: 404 }
-        )
-      );
+      if (await dbWritable()) {
+        return clear(
+          NextResponse.json(
+            { error: "No account found for that email. Create an account first." },
+            { status: 404 }
+          )
+        );
+      }
+      // Read-only host: accounts cannot be stored, so a verified email signs in directly.
+      const role = (await isApprovedLecturer(email)) ? "Lecturer" : "Student";
+      user = { email: email.toLowerCase(), name: email.split("@")[0], role };
+    } else {
+      user = toSessionUser(known);
     }
-    user = toSessionUser(known);
+
+    if (user.role !== "Lecturer" && (await isApprovedLecturer(email))) {
+      try {
+        await promoteToLecturer(email);
+      } catch (err) {
+        console.warn(
+          "Lecturer role promotion skipped:",
+          err instanceof Error ? err.message : err
+        );
+      }
+      user = { ...user, role: "Lecturer" };
+    }
   }
 
   const session = await createSessionToken({ email: user.email, name: user.name, role: user.role });

@@ -59,3 +59,23 @@ export async function createUser(email: string, name: string, role: "Student" | 
   });
   return { email: key, name: display, role };
 }
+
+export async function promoteToLecturer(email: string): Promise<void> {
+  const conn = await db();
+  await conn.execute({ sql: "UPDATE users SET role = 'Lecturer' WHERE email = ?", args: [email.trim().toLowerCase()] });
+}
+
+/** True when the database accepts writes (false on read-only hosts with no DATABASE_URL). */
+export async function dbWritable(): Promise<boolean> {
+  try {
+    const conn = await db();
+    await conn.execute("CREATE TABLE IF NOT EXISTS _write_probe (k TEXT)");
+    return true;
+  } catch (err) {
+    console.warn(
+      "Database write check failed; treating database as read-only:",
+      err instanceof Error ? err.message : err
+    );
+    return false;
+  }
+}

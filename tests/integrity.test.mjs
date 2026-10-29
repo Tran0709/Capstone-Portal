@@ -21,6 +21,15 @@ test("maintenance notice: has an id, title, and message", () => {
   assert.ok(typeof notice.title === "string" && notice.title.trim());
   assert.ok(typeof notice.message === "string" && notice.message.trim());
 });
+test("example environment does not contain a session signing secret", () => {
+  const env = readFileSync(".env.example", "utf8");
+  const match = env.match(/^SESSION_SECRET=(.*)$/m);
+  assert.ok(match, "SESSION_SECRET setting is missing");
+  assert.ok(
+    !/^[a-f0-9]{32,}$/i.test(match[1].trim()),
+    "SESSION_SECRET in .env.example must be a placeholder, not a secret"
+  );
+});
 test("no secrets committed", () => {
   const bad = [/re_[A-Za-z0-9]{20,}/, /sk-ant-[A-Za-z0-9_-]{20,}/, /\b\d{8,}:[A-Za-z0-9_-]{30,}\b/, /^SMTP_PASS=[^\s#]+/m];
   const skip = new Set(["node_modules", ".next", ".git", "data"]);
