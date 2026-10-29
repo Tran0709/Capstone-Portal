@@ -2,6 +2,7 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import { SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 import { AdminUpload } from "@/components/admin/admin-upload";
+import { AdminUsers } from "@/components/admin/admin-users";
 import { BrandLogo } from "@/components/brand/brand-logo";
 import { ArrowLeft } from "lucide-react";
 
@@ -29,7 +30,10 @@ export default async function AdminPage() {
 
       <main className="mx-auto max-w-2xl px-4 py-10 md:px-6">
         {isLecturer ? (
-          <AdminUpload />
+          <>
+            <AdminUpload />
+            <AdminUsers me={session?.email ?? ""} />
+          </>
         ) : (
           <div className="rounded-2xl border bg-surface p-8 text-center">
             <h1 className="text-lg font-semibold">Lecturer access required</h1>

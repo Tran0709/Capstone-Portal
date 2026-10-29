@@ -79,3 +79,32 @@ export async function dbWritable(): Promise<boolean> {
     return false;
   }
 }
+
+export async function listUsers(): Promise<SessionUser[]> {
+  try {
+    const conn = await db();
+    const res = await conn.execute("SELECT email,name,role FROM users ORDER BY role, email");
+    return res.rows.map((r) => ({
+      email: String(r.email),
+      name: String(r.name ?? ""),
+      role: String(r.role ?? "Student"),
+    }));
+  } catch {
+    return bundledUsers.map(toSessionUser);
+  }
+}
+
+export async function setUserRole(email: string, role: "Student" | "Lecturer"): Promise<boolean> {
+  const conn = await db();
+  const res = await conn.execute({
+    sql: "UPDATE users SET role = ? WHERE email = ?",
+    args: [role, email.trim().toLowerCase()],
+  });
+  return res.rowsAffected > 0;
+}
+
+export async function countLecturers(): Promise<number> {
+  const conn = await db();
+  const res = await conn.execute("SELECT COUNT(*) AS n FROM users WHERE role = 'Lecturer'");
+  return Number(res.rows[0]?.n ?? 0);
+}

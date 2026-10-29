@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import { isValidEmail, isAllowed } from "@/lib/allowlist";
 import { CHALLENGE_COOKIE, verifyChallenge } from "@/lib/otp-challenge";
 import { createSessionToken, SESSION_COOKIE, sessionCookieOptions } from "@/lib/auth";
-import { findUser, toSessionUser, createUser, isApprovedLecturer, promoteToLecturer, dbWritable } from "@/lib/users";
+import { findUser, toSessionUser, createUser, isApprovedLecturer, dbWritable } from "@/lib/users";
 
 export const runtime = "nodejs";
 
@@ -103,17 +103,6 @@ export async function POST(req: Request) {
       user = toSessionUser(known);
     }
 
-    if (user.role !== "Lecturer" && (await isApprovedLecturer(email))) {
-      try {
-        await promoteToLecturer(email);
-      } catch (err) {
-        console.warn(
-          "Lecturer role promotion skipped:",
-          err instanceof Error ? err.message : err
-        );
-      }
-      user = { ...user, role: "Lecturer" };
-    }
   }
 
   const session = await createSessionToken({ email: user.email, name: user.name, role: user.role });
