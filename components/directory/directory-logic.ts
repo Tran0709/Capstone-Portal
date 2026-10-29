@@ -5,9 +5,16 @@
 
 type P = Record<string, any>;
 
+export type DirectoryOptions = {
+  isLecturer?: boolean;
+  onEdit?: (project: any) => void;
+  onDelete?: (project: any) => void;
+};
+
 export function initDirectory(
   projects: P[],
-  signal: AbortSignal
+  signal: AbortSignal,
+  options: DirectoryOptions = {}
 ): void {
   const $ = (id: string) => document.getElementById(id)!;
   const searchBar = $("search-bar") as HTMLInputElement;
@@ -24,6 +31,17 @@ export function initDirectory(
   const modalMiddleware = $("modalMiddleware");
   const projectCountSubtitle = $("project-count-subtitle");
   const countChip = document.getElementById("count-chip");
+  const sortSelect = document.getElementById("sort-select") as HTMLSelectElement | null;
+  const uploadedTime = (p: P) => {
+    const t = Date.parse(String(p?.uploadedAt ?? ""));
+    return Number.isNaN(t) ? 0 : t; // projects without a date count as the oldest
+  };
+  const formatDate = (iso: any) => {
+    const t = Date.parse(String(iso ?? ""));
+    return Number.isNaN(t)
+      ? ""
+      : new Date(t).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
+  };
 
   const MAX_AVERAGE_OPTION_LENGTH = 40;
   const MAX_UNIQUE_RATIO = 0.6;
@@ -93,7 +111,7 @@ export function initDirectory(
         return ev.visible ? { item, relevance: ev.relevance } : null;
       })
       .filter(Boolean)
-      .sort((a: any, b: any) => b.relevance - a.relevance || a.item.title.localeCompare(b.item.title))
+      .sort((a: any, b: any) => b.relevance - a.relevance || String(a.item.title ?? "").localeCompare(String(b.item.title ?? "")))
       .map((e: any) => e.item);
   }
 
@@ -210,7 +228,10 @@ export function initDirectory(
   }
 
   function buildFilterGroups(projects: P[]) {
-    const allKeys = [...new Set(projects.flatMap((p) => Object.keys(p || {})))];
+    const SKIP = new Set(["id", "title", "shortdesc", "fulldesc", "module"]);
+    let allKeys = [...new Set(projects.flatMap((p) => Object.keys(p || {})))].filter((k) => !SKIP.has(k));
+    // "category" and "categories" describe the same thing; show a single "Categories" section.
+    if (allKeys.includes("categories")) allKeys = allKeys.filter((k) => k !== "category");
     return allKeys
       .map((key) => ({ key, title: toFilterTitle(key), options: getUniqueSortedOptions(projects, key) }))
       .filter((g) => isFilterCandidate(projects, g.key, g.options))
@@ -246,7 +267,8 @@ export function initDirectory(
           <span class="meta-pill"><span class="meta-label">Skill</span>${escapeHtml(project.skillLevel || "Intermediate")}</span>
           <span class="meta-pill"><span class="meta-label">Industry</span>${escapeHtml(project.industry || "Technology")}</span>
         </div>
-        <p>${escapeHtml(project.shortdesc || "")}</p>`;
+        <p>${escapeHtml(project.shortdesc || "")}</p>
+        ${formatDate(project.uploadedAt) ? `<span class="added-date">Added ${escapeHtml(formatDate(project.uploadedAt))}</span>` : ""}`;
       card.addEventListener("click", () => openModal(project), { signal });
       projectsList.appendChild(card);
       projectCards.push(card);
@@ -256,6 +278,9 @@ export function initDirectory(
 
   function filterProjects() {
     const visible = filterCatalogItems(catalogProjects, { query: searchBar.value, ...selectionState });
+    const order = sortSelect?.value ?? "relevance";
+    if (order === "newest") visible.sort((a, b) => uploadedTime(b) - uploadedTime(a));
+    else if (order === "oldest") visible.sort((a, b) => uploadedTime(a) - uploadedTime(b));
     const rankingMap = new Map(visible.map((p, i) => [String(p.id || p.title || `project-${i}`), i]));
     const visibleCards: HTMLElement[] = [];
     const hiddenCards: HTMLElement[] = [];
@@ -295,6 +320,22 @@ export function initDirectory(
     renderStackChips(modalFrontend, techList(project, "frontendStack", project.frontend, "React"));
     renderStackChips(modalBackend, techList(project, "backendStack", project.backend, "Node.js"));
     renderStackChips(modalMiddleware, techList(project, "middlewareStack", project.middleware, "REST API"));
+    const actions = document.getElementById("modalActions");
+    if (actions) {
+      actions.innerHTML = "";
+      if (options.isLecturer) {
+        const mk = (label: string, cls: string, fn?: (p: any) => void) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = `modal-action ${cls}`;
+          b.textContent = label;
+          b.addEventListener("click", () => { closeModal(); fn?.(project); }, { signal });
+          actions.appendChild(b);
+        };
+        mk("Edit project", "edit", options.onEdit);
+        mk("Delete project", "danger", options.onDelete);
+      }
+    }
     modal.classList.add("open");
   }
 
@@ -396,6 +437,7 @@ export function initDirectory(
   on(closeModalBtn, "click", closeModal);
   on(modal, "click", (e: any) => { if (e.target === modal) closeModal(); });
   on(searchBar, "input", filterProjects);
+  if (sortSelect) on(sortSelect, "change", filterProjects);
 
   document.querySelectorAll(".stack-toggle").forEach((button) => {
     button.addEventListener("click", () => {

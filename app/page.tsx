@@ -66,7 +66,7 @@ export default async function Home() {
         </div>
       </header>
 
-      <Directory />
+      <Directory isLecturer={session?.role === "Lecturer"} />
       {session?.email && (
         <MaintenanceNotice
           key={`${session.email}:${maintenanceNotice.id}`}

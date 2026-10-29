@@ -1,0 +1,3 @@
+Title,Description,Category,Industry,Team Size,Skill Level,Frontend,Backend,Middleware
+ISAD 3000 CSV Test,A CSV example using plain column names to check header matching.,Education,Education,Small Team,Intermediate,"React, Tailwind CSS","Node.js, Express","REST API, Redis"
+Recycling Reward Tracker,Residents scan bins to earn points for correct recycling.,Sustainability,Technology,Mid Size Team,Intermediate,Vue,"Python, FastAPI",MQTT

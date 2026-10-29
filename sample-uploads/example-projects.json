@@ -1,0 +1,50 @@
+[
+  {
+    "id": "TEST-001",
+    "title": "ISAD 3000",
+    "category": "Education",
+    "categoryLabel": "Learning Platform",
+    "shortdesc": "A sample project for testing uploads: a course portal with lessons, quizzes and progress tracking.",
+    "fulldesc": "ISAD 3000 is an example project used to check that uploaded projects appear in search, filters and the project count. It covers lesson delivery, student progress and lecturer reporting.",
+    "applicationType": "Web App",
+    "teamSize": "Small Team",
+    "skillLevel": "Intermediate",
+    "industry": "Education",
+    "frontendStack": ["React", "Next.js", "Tailwind CSS"],
+    "backendStack": ["Node.js", "Express"],
+    "middlewareStack": ["REST API", "Redis"],
+    "categories": ["Education", "Analytics"]
+  },
+  {
+    "id": "TEST-002",
+    "title": "Campus Energy Dashboard",
+    "category": "IoT",
+    "categoryLabel": "Smart Campus IoT",
+    "shortdesc": "Live energy usage from campus buildings shown on an interactive dashboard.",
+    "fulldesc": "Sensors report electricity and water use every minute. The dashboard highlights waste, compares buildings and sends alerts when usage spikes.",
+    "applicationType": "Dashboard",
+    "teamSize": "Mid Size Team",
+    "skillLevel": "Advanced",
+    "industry": "Technology",
+    "frontendStack": ["Vue", "Chart.js"],
+    "backendStack": ["Python", "FastAPI", "PostgreSQL"],
+    "middlewareStack": ["MQTT", "Docker"],
+    "categories": ["IoT", "Sustainability"]
+  },
+  {
+    "id": "TEST-003",
+    "title": "Library Seat Booking App",
+    "category": "Education",
+    "categoryLabel": "Campus Services",
+    "shortdesc": "Students reserve study seats and get reminders before bookings expire.",
+    "fulldesc": "A mobile-friendly app where students pick a floor and seat, check in with a QR code, and release seats early so others can use them.",
+    "applicationType": "Mobile App",
+    "teamSize": "Solo",
+    "skillLevel": "Beginner",
+    "industry": "Education",
+    "frontendStack": ["React Native"],
+    "backendStack": ["Node.js", "SQLite"],
+    "middlewareStack": ["REST API"],
+    "categories": ["Education", "Mobile"]
+  }
+]

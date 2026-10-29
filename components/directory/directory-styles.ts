@@ -176,6 +176,16 @@ export const directoryCss = `.dash-root { color: var(--foreground); }
 .tech-chip { display:inline-flex; align-items:center; gap:.4rem; padding:.28rem .55rem .28rem .3rem; border-radius:999px; background:var(--background); border:1px solid var(--border); font-size:.8rem; color:var(--foreground); }
 .tech-badge { display:grid; place-items:center; width:1.35rem; height:1.35rem; border-radius:.4rem; font-size:.62rem; font-weight:700; letter-spacing:.02em; }
 
+.modal-actions { display: flex; gap: .5rem; margin-top: 1rem; }
+.modal-action { border: 1px solid var(--border); background: transparent; color: var(--foreground); border-radius: 6px; padding: .4rem .8rem; font-size: .85rem; cursor: pointer; }
+.modal-action:hover { background: var(--surface-2, rgba(255,255,255,.06)); }
+.modal-action.danger { color: #ef4444; border-color: #ef4444; }
+.edit-form label { display: block; font-size: .75rem; margin: .6rem 0 .2rem; color: var(--muted-foreground, #94a3b8); }
+.edit-form input, .edit-form textarea { width: 100%; border: 1px solid var(--border); background: var(--background); color: var(--foreground); border-radius: 6px; padding: .45rem .6rem; font-size: .85rem; }
+.edit-form textarea { min-height: 90px; resize: vertical; }
+.edit-buttons { display: flex; justify-content: flex-end; gap: .5rem; margin-top: 1rem; }
+#sort-select { width: 100%; border: 1px solid var(--border); background: var(--background); color: var(--foreground); border-radius: 6px; padding: .45rem .6rem; font-size: .85rem; margin-bottom: .75rem; }
+.added-date { display: block; margin-top: .5rem; font-size: .72rem; color: var(--muted-foreground, #94a3b8); }
 @media (max-width: 900px) {
   .dash-grid { grid-template-columns: 1fr; }
   .dash-sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
