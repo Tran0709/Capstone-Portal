@@ -54,6 +54,57 @@ export function initDirectory(
   const on = (el: Element, ev: string, fn: any) =>
     el.addEventListener(ev, fn, { signal });
 
+  const FILTER_HELP: Record<string, string> = {
+    applicationType: "The kind of product the project builds, such as a web app, mobile app or dashboard.",
+    teamSize: "How many people the project is designed for, from solo work to a full enterprise team.",
+    skillLevel: "How experienced the team needs to be to deliver the project.",
+    industry: "The sector or field the project is built for.",
+    categories: "The themes a project belongs to. A project can belong to more than one.",
+    categoryLabel: "The descriptive name of the project's main category.",
+    frontendStack: "Technologies used for the user interface the customer sees.",
+    backendStack: "Technologies used for the server, business logic and data storage.",
+    middlewareStack: "Technologies that connect the front end and back end, such as messaging, caching and containers.",
+  };
+
+  const countOption = (key: string, option: string) => {
+    const want = normalizeValue(option);
+    let n = 0;
+    for (const p of projects) {
+      const v = p[key];
+      const vals = Array.isArray(v) ? v : [v];
+      if (vals.some((x) => normalizeValue(x) === want)) n++;
+    }
+    return n;
+  };
+
+  // One shared tooltip for the filter info icons (outside the sidebar so it is never clipped).
+  const tip = document.createElement("div");
+  tip.className = "filter-tip";
+  tip.setAttribute("role", "tooltip");
+  document.body.appendChild(tip);
+  signal.addEventListener("abort", () => tip.remove());
+  let tipOwner: Element | null = null;
+
+  function showTip(icon: Element, group: any) {
+    const help = FILTER_HELP[group.key] ?? `Filter projects by ${String(group.title).toLowerCase()}.`;
+    const rows = group.options
+      .map((o: string) => ({ o, n: countOption(group.key, o) }))
+      .sort((a: any, b: any) => b.n - a.n || a.o.localeCompare(b.o));
+    const shown = rows.slice(0, 12);
+    tip.innerHTML =
+      `<strong>${escapeHtml(group.title)}</strong><p>${escapeHtml(help)}</p>` +
+      `<ul>${shown.map((r: any) => `<li><span>${escapeHtml(r.o)}</span><b>${r.n}</b></li>`).join("")}</ul>` +
+      (rows.length > shown.length ? `<em>+ ${rows.length - shown.length} more options</em>` : "") +
+      `<small>Number of projects in each option</small>`;
+    const r = icon.getBoundingClientRect();
+    tip.style.display = "block";
+    const h = tip.offsetHeight;
+    tip.style.left = `${Math.min(r.right + 12, window.innerWidth - 290)}px`;
+    tip.style.top = `${Math.max(8, Math.min(r.top - 8, window.innerHeight - h - 8))}px`;
+    tipOwner = icon;
+  }
+  function hideTip() { tip.style.display = "none"; tipOwner = null; }
+
   function renderCategoryFilters(groups: any[]) {
     filterButtonsContainer.innerHTML = "";
     groups.forEach((group) => {
@@ -62,8 +113,21 @@ export function initDirectory(
       const header = document.createElement("button");
       header.className = "filter-group-header";
       header.type = "button";
-      header.innerHTML = `<span>${group.title}</span><span>&#9662;</span>`;
+      header.innerHTML = `<span class="filter-title">${group.title}<span class="info-icon" role="button" tabindex="0" aria-label="About ${escapeHtml(group.title)}">i</span></span><span>&#9662;</span>`;
+      const icon = header.querySelector(".info-icon")!;
+      icon.addEventListener("mouseenter", () => showTip(icon, group), { signal });
+      icon.addEventListener("mouseleave", hideTip, { signal });
+      icon.addEventListener("focus", () => showTip(icon, group), { signal });
+      icon.addEventListener("blur", hideTip, { signal });
+      icon.addEventListener("click", (e) => {
+        e.stopPropagation();
+        tipOwner === icon ? hideTip() : showTip(icon, group);
+      }, { signal });
+      icon.addEventListener("keydown", (e: any) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); tipOwner === icon ? hideTip() : showTip(icon, group); }
+      }, { signal });
       header.addEventListener("click", () => {
+        hideTip();
         groupEl.querySelector(".filter-group-body")!.classList.toggle("collapsed");
       }, { signal });
       const body = document.createElement("div");
@@ -228,7 +292,7 @@ export function initDirectory(
   }
 
   function buildFilterGroups(projects: P[]) {
-    const SKIP = new Set(["id", "title", "shortdesc", "fulldesc", "module"]);
+    const SKIP = new Set(["id", "title", "shortdesc", "fulldesc", "module", "uploadedAt", "_deleted"]);
     let allKeys = [...new Set(projects.flatMap((p) => Object.keys(p || {})))].filter((k) => !SKIP.has(k));
     // "category" and "categories" describe the same thing; show a single "Categories" section.
     if (allKeys.includes("categories")) allKeys = allKeys.filter((k) => k !== "category");

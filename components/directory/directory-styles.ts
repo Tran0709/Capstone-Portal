@@ -186,6 +186,17 @@ export const directoryCss = `.dash-root { color: var(--foreground); }
 .edit-buttons { display: flex; justify-content: flex-end; gap: .5rem; margin-top: 1rem; }
 #sort-select { width: 100%; border: 1px solid var(--border); background: var(--background); color: var(--foreground); border-radius: 6px; padding: .45rem .6rem; font-size: .85rem; margin-bottom: .75rem; }
 .added-date { display: block; margin-top: .5rem; font-size: .72rem; color: var(--muted-foreground, #94a3b8); }
+.filter-title { display: inline-flex; align-items: center; gap: .45rem; }
+.info-icon { display: inline-grid; place-items: center; width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--muted-foreground, #94a3b8); color: var(--muted-foreground, #94a3b8); font: italic 700 10px/1 Georgia, serif; cursor: help; }
+.info-icon:hover, .info-icon:focus-visible { color: var(--foreground); border-color: var(--foreground); outline: none; }
+.filter-tip { display: none; position: fixed; z-index: 2147483000; width: 270px; padding: .8rem .9rem; border: 1px solid var(--border); border-radius: .6rem; background: var(--surface, var(--background)); color: var(--foreground); box-shadow: 0 10px 30px rgba(0,0,0,.45); font-size: .8rem; line-height: 1.35; font-weight: 400; }
+.filter-tip strong { display: block; font-size: .9rem; margin-bottom: .25rem; }
+.filter-tip p { margin: 0 0 .5rem; color: var(--muted-foreground, #94a3b8); }
+.filter-tip ul { list-style: none; margin: 0; padding: 0; }
+.filter-tip li { display: flex; justify-content: space-between; gap: .75rem; padding: .12rem 0; }
+.filter-tip li b { font-variant-numeric: tabular-nums; }
+.filter-tip em { display: block; margin-top: .3rem; color: var(--muted-foreground, #94a3b8); }
+.filter-tip small { display: block; margin-top: .5rem; color: var(--muted-foreground, #94a3b8); font-size: .7rem; }
 @media (max-width: 900px) {
   .dash-grid { grid-template-columns: 1fr; }
   .dash-sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); }

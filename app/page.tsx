@@ -3,7 +3,7 @@ import { SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 import { Directory } from "@/components/directory/directory";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/brand/brand-logo";
-import { GraduationCap, LogOut, Upload } from "lucide-react";
+import { GraduationCap, LogOut, Upload, Users } from "lucide-react";
 import maintenanceNotice from "@/data/maintenance-notice.json";
 import { MaintenanceNotice } from "@/components/maintenance-notice";
 
@@ -54,6 +54,15 @@ export default async function Home() {
               >
                 <Upload className="size-4" />
                 <span className="hidden sm:inline">Upload</span>
+              </a>
+            )}
+            {session?.role === "Lecturer" && (
+              <a
+                href="/admin/accounts"
+                className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm hover:bg-surface-2"
+              >
+                <Users className="size-4" />
+                <span className="hidden sm:inline">Accounts</span>
               </a>
             )}
             <form action="/api/auth/logout" method="post">

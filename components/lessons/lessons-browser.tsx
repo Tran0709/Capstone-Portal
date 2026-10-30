@@ -3,6 +3,7 @@
 import * as React from "react";
 import { Download, FileText, Loader2, PlayCircle, Plus, Search, Trash2, Video } from "lucide-react";
 import { toast } from "sonner";
+import { FilePicker } from "@/components/ui/file-picker";
 
 type LessonFile = { id: string; kind: "document" | "video"; filename: string; mime: string; size: number };
 type Lesson = {
@@ -142,22 +143,21 @@ export function LessonsBrowser({ isLecturer }: { isLecturer: boolean }) {
                 <span className="text-muted-foreground">YouTube link (optional)</span>
                 <input name="youtube" placeholder="https://www.youtube.com/watch?v=…" className={inputCls} />
               </label>
-              <label className="grid gap-1 text-sm">
+              <div className="grid gap-1 text-sm">
                 <span className="text-muted-foreground">Video file (optional) · .mp4 or .webm · up to 20 MB</span>
-                <input name="video" type="file" accept=".mp4,.webm,video/mp4,video/webm" className="text-sm" />
-              </label>
-              <label className="grid gap-1 text-sm">
+                <FilePicker name="video" accept=".mp4,.webm,video/mp4,video/webm" buttonLabel="Choose video file" />
+              </div>
+              <div className="grid gap-1 text-sm">
                 <span className="text-muted-foreground">
                   Documents (optional, up to 5) · PDF, Word, PowerPoint, Excel, text, zip, images · up to 10 MB each
                 </span>
-                <input
+                <FilePicker
                   name="documents"
-                  type="file"
                   multiple
                   accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt,.md,.zip,.png,.jpg,.jpeg"
-                  className="text-sm"
+                  buttonLabel="Choose documents"
                 />
-              </label>
+              </div>
               <div>
                 <button
                   type="submit"

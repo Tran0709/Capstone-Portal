@@ -50,7 +50,7 @@ export function AdminUsers({ me }: { me: string }) {
   );
 
   return (
-    <section className="mt-10 rounded-2xl border bg-surface p-6">
+    <section className="rounded-2xl border bg-surface p-6">
       <h2 className="text-lg font-semibold">Manage accounts</h2>
       <p className="mt-1 text-sm text-muted-foreground">
         Change an account between Student and Lecturer. The change applies the next time that person signs in.

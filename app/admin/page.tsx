@@ -2,9 +2,8 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import { SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 import { AdminUpload } from "@/components/admin/admin-upload";
-import { AdminUsers } from "@/components/admin/admin-users";
 import { BrandLogo } from "@/components/brand/brand-logo";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Users } from "lucide-react";
 
 export default async function AdminPage() {
   const token = (await cookies()).get(SESSION_COOKIE)?.value;
@@ -19,21 +18,26 @@ export default async function AdminPage() {
             <BrandLogo size={32} />
             <span className="font-semibold tracking-tight">Lecturer · Project Upload</span>
           </div>
+          <div className="flex items-center gap-2">
+            <Link
+              href="/admin/accounts"
+              className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm hover:bg-surface-2"
+            >
+              <Users className="size-4" /> Manage accounts
+            </Link>
           <Link
             href="/"
             className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm hover:bg-surface-2"
           >
             <ArrowLeft className="size-4" /> Back to directory
           </Link>
+          </div>
         </div>
       </header>
 
       <main className="mx-auto max-w-2xl px-4 py-10 md:px-6">
         {isLecturer ? (
-          <>
-            <AdminUpload />
-            <AdminUsers me={session?.email ?? ""} />
-          </>
+          <AdminUpload />
         ) : (
           <div className="rounded-2xl border bg-surface p-8 text-center">
             <h1 className="text-lg font-semibold">Lecturer access required</h1>
